@@ -1,0 +1,64 @@
+.Logo-Color
+{
+	color: red;
+}
+.login-button
+{
+	background-color: white;
+    color: grey ;
+}
+body{
+	color: white;
+}
+
+.img-Centered
+{
+	margin-left: 20%;
+}
+.add-view 
+{
+	margin-bottom: 40px;
+}
+.setting-space
+{
+	margin-bottom: 40px;
+}
+.show-space
+{
+	margin-left: 20px;
+}
+
+.background-image{
+background: url("CssImages/44315068-glass-wallpapers.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+h1{
+ color: white;
+}
+a{color:white;}
+.transparent_class
+{
+	color:white;
+	background-color:rgba(0,0,0,0.6) !important;
+	min-height: 500px;
+}
+.md-tab
+{
+	color:white !important;
+}
+text
+{
+	color:white;
+}
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+    color: white;
+}
+.float-right
+{
+	float: right;
+}
