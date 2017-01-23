@@ -1,92 +1,10 @@
 <div class="background">
  <H1 class="text-center">Welcome User</H1>
-  <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Live Feed">
-        <md-content class="md-padding transparent_class">
-          <h1 class="md-display-2 text-center">Live Feed</h1>
-          <div>
-  	<button class="btn login-button add-view" type="Submit">Add View</button>
-  </div>
+  <h2>Live Feed View</h2>        
+  <button class="btn login-button add-view" type="Submit">Add View</button>
+  
+  <div>
   <img src="https://7a786f7d71.dataplicity.io/?action=stream"/>
-       </md-content>
-       </md-tab>
-        <md-tab label="Saved Videos">
-        <md-content class="md-padding transparent_class">
-          <h1 class="md-display-2 text-center">Saved Videos</h1>
-         <div>
- 			<div class="col-md-6">
- 	 		<button class="btn login-button add-view">Choose Cam</button>
- 			</div>
- 			<div class="col-md-6">
-     		<button class="btn login-button add-view">Add New Cam</button>
- 			</div>
- 		 </div>
-       </md-content>
-       </md-tab>
-   <md-tab label="Viewers">
-        <md-content class="md-padding transparent_class">
-          <h1 class="md-display-2 text-center">Viewers</h1>
-         <div class="col-md-12">
-  			<button class="btn login-button add-view ">Add Viewers</button>
-  		</div>
-  			<div class="col-md-4">Name</div>
-  			<div class="col-md-4">Email</div>
-  			<div class="col-md-4">Authorization</div>
- 		
-    </md-content>
-   </md-tab>
-    <md-tab label="Settings ">
-        <md-content class="md-padding transparent_class">
-          <h1 class="md-display-2 text-center">Settings</h1>
-         <div class="setting-space col-md-12">
-         Enable Camera:
-   <md-switch ng-model = "data.cb1" arialabel="Enable Camera" ng-true-value = "'Yes'" ng-false-value="'No'">
- 	 {{data.cb1}}
-   </md-switch>
-  </div>
-  <div class="setting-space col-md-12">
-  <md-slider-container>
-  	<span>Time Length</span>
-  		<md-slider flex="0" min="0" max="60" ng-model="data.timeLength" aria-label = "Time-Length" aria-controls="Time-Length-Slider">
-        </md-slider>
-        <md-input-container>
-        <input flex="" type="number" ng-model="data.timeLength" aria-label="Time-Length" aria-controls="Time-Length-Slider">
-      </md-input-container>
-  </md-slider-container>
-  </div>
-  <div class="setting-space col-md-12">
-  Notifications:
-   <md-switch ng-model = "data.notifications" arialabel="Notifications" ng-true-value = "'Yes'" ng-false-value="'No'">
- 	 {{data.notifications}}
-   </md-switch>
-  </div>
-  <div class=" col-md-3 settings-space">Time Interval: 
-  </div>
-  <div class="setting-space col-md-9">
-      <md-checkbox ng-model="data.timeinterval" aria-label="timeinterval"></md-checkbox>
-  </div>
-  
-    <div class="col-md-3 setting-space">
-  	 Set Time:
-    </div>
-    <div class="col-md-9 setting-space">
-     <md-checkbox ng-model="data.settime" aria-label="settime"></md-checkbox>
-   </div>
-
-   <div class="col-md-6 setting-space">
-     From:
-     <input type="time" name="" ng-model="data.from" md-placeholder="Enter Time"></input>
-   </div>
-   <div class="col-md-6 setting-space">
-  	 To:
-  	<input type="time" ng-model="data.to" md-placeholder="Enter Time" min="08:00:00" max="17:000:00"></input>
-   </div>
-   <div class="col-md-12 setting-space">
-    <md-list-item ng-repeat="day in data.days">
-      {{ day.name }}
-     <md-checkbox class="md-secondary" ng-model="day.wanted"></md-checkbox>
-   </md-list-item>
-  </div>
-    </md-content>
- </md-tab>
-  
+</div>        
+</div>
+    

@@ -15,7 +15,16 @@ angular.module('BasicHttpAuthExample', ['ngMaterial',
     'ngCookies'
     
 ])
- 
+ .controller('ChangeLocationController', ['$location', function($location,$scope){
+    this.changetohome = function(){
+            $location.path('/');
+        };
+    this.changetovids = function(){
+            $location.path('/Videos');
+    };
+
+     
+ }])
 .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
@@ -27,10 +36,13 @@ angular.module('BasicHttpAuthExample', ['ngMaterial',
  
         .when('/', {
 
-            controller: 'TabController',
+            controller: 'CameraViewController',
             templateUrl: 'modules/home/views/MotionHome.html'
         })
- 
+        .when('/Videos',{
+           controller: 'Videos',
+           templateUrl: 'modules/home/views/MotionVids.html' 
+        })
         .otherwise({ redirectTo: '/login' });
 }])
  
@@ -47,6 +59,9 @@ angular.module('BasicHttpAuthExample', ['ngMaterial',
             if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
                 $location.path('/login');
             }
+       
         });
+        
+         
     }]);
-
+        

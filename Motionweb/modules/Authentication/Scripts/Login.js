@@ -1,8 +1,4 @@
-/**
-*  Module
-*
-* Description
-*/
+'strict'
 angular.module('Authentication')
 
 .controller('LoginController',
@@ -15,10 +11,11 @@ angular.module('Authentication')
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
                 if(response.success) {
+                    console.log('ok');
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
-                    $location.path('/');
-                   
-                } else {
+                    $location.path('/');                  
+                } 
+                else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
                 }
