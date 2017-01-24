@@ -1,8 +1,4 @@
-var /**
-* MotionCameras Module
-*
-* Description
-*/
+
 angular.module('MotionCameras', []);
 .controller('ViewMotionCameras', ['$scope','$rootScope','$location', function($scope,$rootScope,$location){
  $scope.camera = [

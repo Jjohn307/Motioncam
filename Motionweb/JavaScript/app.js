@@ -15,7 +15,7 @@ angular.module('BasicHttpAuthExample', ['ngMaterial',
     'ngCookies'
     
 ])
- .controller('ChangeLocationController', ['$location', function($location,$scope){
+ .controller('ChangeLocationController', ['$location', function($location){
     this.changetohome = function(){
             $location.path('/');
         };
@@ -51,7 +51,6 @@ angular.module('BasicHttpAuthExample', ['ngMaterial',
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
  
         $rootScope.$on('$locationChangeStart', function (event, next, current) {

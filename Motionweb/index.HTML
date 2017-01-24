@@ -12,11 +12,11 @@
   <body>
    
     <div class="jumbotron">
-     <div ng-controller="ChangeLocationController as switch">
+     <div>
       <md-content class="md-padding">
-    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="switch.changetohome()" name="LiveFeed">Live Feed</md-nav-item>
-      <md-nav-item md-nav-click="switch.changetovids()" name="Vids">Saved Videos</md-nav-item>
+      <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="" name="LiveFeed">Live Feed</md-nav-item>
+      <md-nav-item md-nav-click="" name="Vids">Saved Videos</md-nav-item>
       <md-nav-item md-nav-click="" name="page3">Add Viewers</md-nav-item>
      </div>
       <div class="container background-image">
@@ -24,7 +24,8 @@
           <div color ="background" ng-view></div>
         </div>
       </div>
-    </div>
+      </div>
+  
 
     <div class="col-md-6 col-xs-12">
       <p>

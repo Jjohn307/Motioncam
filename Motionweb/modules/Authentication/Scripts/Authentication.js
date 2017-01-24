@@ -3,8 +3,8 @@
 angular.module('Authentication')
  
 .factory('AuthenticationService',
-    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
-    function (Base64, $http, $cookieStore, $rootScope, $timeout) {
+    [ '$http', '$cookieStore', '$rootScope', '$timeout',
+    function ( $http, $cookieStore, $rootScope, $timeout) {
         var service = {};
    
         service.Login = function (username, password, callback) {
@@ -12,7 +12,7 @@ angular.module('Authentication')
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
             $timeout(function(){
-                var response = { success: username === 'cheese' && password === 'test' };
+                var response = { success: username == 'cheese' && password == 'test' };
                 if(!response.success) {
                     response.message = 'Username or password is incorrect';
                 }
@@ -29,7 +29,6 @@ angular.module('Authentication')
                 }
             };
   
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
         };
   
