@@ -1,10 +1,21 @@
-<div class="background">
- <H1 class="text-center">Welcome User</H1>
-  <h2>Live Feed View</h2>        
-  <button class="btn login-button add-view" type="Submit">Add View</button>
-  
+<div class=" percentmargin5">
+  <div class="container center-title">
+  	<div class="float-left">
+  		<h2>Live Feed  </h2>
+  	</div>
+  	<div class="float-left">
+  		<img style="width: 15%;" src="css/CssImages/binoculars (1).png"/>
+  	</div>     
+  </div>
+<div class="row">
+  <div ng-repeat="Camera in Cameras" class="margin-top">
+  	<div class="col-md-6 col-lg-6 margin-bottom ">
+  		<img class="image-fit md-whiteframe-11dp" ng-src="{{Camera.url}}">
+  	</div>
+ </div>  
+ </div>
   <div>
-  <img src="https://7a786f7d71.dataplicity.io/?action=stream"/>
-</div>        
-</div>
+  <button class="btn login-button add-view" type="Submit">Add View</button>    
+  </div>  
+  </div>
     

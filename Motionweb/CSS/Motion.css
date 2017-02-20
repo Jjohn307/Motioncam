@@ -1,20 +1,62 @@
-.Logo-Color
-{
-	color: red;
-}
-.login-button
-{
-	background-color: white;
-    color: grey ;
-}
-body{
-	color: white;
+html { 
+  background: url("CssImages/Gray-background-3.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.img-Centered
+text
 {
-	margin-left: 20%;
+	color:white;
 }
+
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+    color: white;
+}
+
+h1
+{
+ color: white;
+}
+
+body
+{
+	background: inherit;
+}
+md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar
+{
+	background: #57BC90 !important;
+}
+
+md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple
+{
+	color:#87cefa !important;
+}
+.main-menu
+{
+	font-size:12px !important;
+}
+.float-right
+{
+	float: right;
+}
+
+.float-left
+{
+	float:left;
+}
+
+.margin-bottom
+{
+	margin-bottom: 10%;
+}
+
+.margin-top
+{
+	margin-top: 2%;
+}
+
 .add-view 
 {
 	margin-bottom: 40px;
@@ -28,37 +70,165 @@ body{
 	margin-left: 20px;
 }
 
-.background-image{
-background: url("CssImages/44315068-glass-wallpapers.jpg") no-repeat center center fixed; 
+.background-image
+{
+  background: url("CssImages/2880x1800-light-sky-blue-solid-color-background.jpg") no-repeat center center fixed !important; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+}
+.background-color
+{
+  background: linear-gradient(-90deg,#77c9D4,#57BC90);
+  background-size: cover;
 }
 
-h1{
- color: white;
-}
-a{color:white;}
+
 .transparent_class
 {
 	color:white;
 	background-color:rgba(0,0,0,0.6) !important;
 	min-height: 500px;
 }
-.md-tab
+
+
+.running-man
 {
-	color:white !important;
+	float: left;
+	width: 20%;
+	height:25%;
+
 }
-text
+
+.white
 {
-	color:white;
+	background-color: white;
 }
-md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+.red
+{
+	color: red;
+}
+.background-light-blue
+{
+	background-color: #87cefa;
+}
+.background-white
+{
+	background-color: white; 
+}
+.percentmargin5
+{
+ margin-left: 5%;
+}
+
+.width-4
+{
+	width:4%;
+}
+.md-button.md-default-theme.md-accent, .md-button.md-accent
+{
+	color:black !important;
+}
+
+.binoculars
+{
+	background: url("CssImages/binoculars-cartoon-illustration-hand-drawn-animation-transparent_vjgspyjo__S0004.jpg") no-repeat center center fixed !important; 
+	width:50%;
+	height:20%;
+}
+
+.center-title
+{
+	margin-left: 32%;
+	display: block;
+}
+.img-size
+{
+	width:100%;
+	height:300px;
+}
+.image-fit
+{
+	max-width:100%;
+	max-height:100%;
+}
+
+.img-Centered
+{
+	margin-left: 20%;
+}
+
+.register-container
+{
+	background-color: white !important;
+	border-radius: 10px 10px 10px 10px;
+	width:45%;
+	margin-top: 10%;
+	margin-left: 25%;
+	
+}
+.register-center
+{
+    margin-left: 20%;
+
+}
+.register-link
+{
+	font-size: 11px;
+    margin-top: 1%;
+}
+
+.login-button
+{
+	background-color: white;
+    color: grey ;
+}
+.login-container
+{
+	background-color: white !important;
+	border-radius: 10px 10px 10px 10px;
+	width:45%;
+	margin-top: 10%;
+	
+}
+.input
+{
+	border-radius: 0px !important;
+	width: 20% !important;
+}
+.login-btn
+{
+
+	width: 20%;
+    background-color: cornflowerblue;
+    border-radius: 0px;
     color: white;
+    margin-bottom: 10%%;
 }
-.float-right
+.login-logo
 {
-	float: right;
+	width: 25%;
+	height:25%;
+
+}
+.login-text
+{
+	font-size: 17px;
+	font-family: cursive;
+	color: black;
+	margin-bottom: 2%;
+}
+.login-center
+{
+	margin-left: 20%;
+}
+.setting-container
+{
+	background-color: #87cefa !important;
+	border-radius: 10px 10px 10px 10px;
+	width:60%;
+	margin-top: 10%;
+	margin-left: 25%;
+	
 }

@@ -1,7 +1,21 @@
 'use strict';
 
-angular.module('Videos', [ngMateral]);
+angular.module('Videos')
 
-.controller('ViewVideos', ['ngMateral','$scope','$rootscope','$location' function($scope,$location){
+.controller('ViewVideos', ['$scope','$location',function($scope,$location){
+
+
+	// Hardcode data until api is acessable
+     $scope.videos = [
+     {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'},
+	 {video:'modules/home/images/Coming_soon.jpg'},
+     {video:'modules/home/images/Coming_soon.jpg'}
+     ];
+
 
 }]);

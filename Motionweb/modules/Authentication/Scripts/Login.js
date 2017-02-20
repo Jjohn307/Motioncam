@@ -6,7 +6,7 @@ angular.module('Authentication')
     function ($scope, $rootScope, $location, AuthenticationService) {
         // reset login status
         AuthenticationService.ClearCredentials();
- 
+        
         $scope.login = function () {
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
@@ -15,9 +15,12 @@ angular.module('Authentication')
                     $location.path('/');                  
                 } 
                 else {
-                    $scope.error = response.message;
-                    $scope.dataLoading = false;
+                    $scope.error = 'nooo';
+                    $scope.dataLoading = false;             
                 }
             });
+        };
+         $scope.SendToRegistrationPage = function(){
+            $location.path('/register');
         };
     }]);

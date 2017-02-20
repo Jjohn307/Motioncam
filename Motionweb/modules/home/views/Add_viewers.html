@@ -1,0 +1,29 @@
+<div>
+		<div>
+			Viewer's Email 
+		</div>
+ 		<input type="text" id="email" name="email" ng-model="email" placeholder="Viewers email">
+ 		<md-button type="submit" class="md-icon-button""><i class="material-icons">group_add</i></md-button>
+</div>
+<div>
+		<table border = 3 style="width:100%;">
+				<tr class="background-white">
+						<td>Firstname</td>
+						<td>Lastname</td>
+						<td>Email</td>
+						<td class="width-4"></td>
+				</tr>
+				<tr ng-repeat="viewer in viewers">
+
+						<td ng-if="$odd"  class="background-white">{{viewer.firstName}}</td>
+						<td ng-if="$even" class="background-light-blue">{{viewer.firstName}}</td>
+						<td ng-if="$odd"  class="background-white">{{viewer.lastName}}</td>
+						<td ng-if="$even" class="background-light-blue">{{viewer.lastName}}</td>
+						<td ng-if="$odd"  class="background-white">{{viewer.email}}</td>
+						<td ng-if="$even" class="background-light-blue">{{viewer.email}}</td>
+						<td ng-if="$odd"  class="background-white width-4" ng-click="delete($index)"><md-button class="md-icon-button"><i class="material-icons">delete</i></md-button></td>
+						<td ng-if="$even" class="background-light-blue width-4" ng-click="delete($index)"><md-button class="md-icon-button"><i class="material-icons">delete</i></md-button></td>
+				</tr>
+			
+		</table>
+</div>
