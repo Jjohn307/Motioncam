@@ -13,10 +13,10 @@ angular.module('home')
         $scope.myWelcome = response.data;
     });
 	$scope.Cameras= [ 
-		{url:'modules/home/images/Coming_soon.jpg'},
-		{url:'modules/home/images/Coming_soon.jpg'},
-		{url:'modules/home/images/Coming_soon.jpg'},
-		{url:'modules/home/images/Coming_soon.jpg'}
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'}
 	];    
 	$scope.Cameracnt = 4 ;
     
