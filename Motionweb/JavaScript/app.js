@@ -51,7 +51,7 @@ angular.module('MotionCam', ['ngMaterial',
     $routeProvider
         .when('/login', {
             controller: 'LoginController',
-            templateUrl: 'modules/Authentication/views/MotionLogin.html',
+            templateUrl: 'modules/Authentication/views/MotionLogin.HTML',
             hideMenus: true
         })
  
