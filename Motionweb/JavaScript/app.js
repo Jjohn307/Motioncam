@@ -51,13 +51,13 @@ angular.module('MotionCam', ['ngMaterial',
     $routeProvider
         .when('/login', {
             controller: 'LoginController',
-            templateUrl: 'modules/Authentication/views/MotionLogin.HTML',
+            templateUrl: 'modules/Authentication/views/MotionLogin.html',
             hideMenus: true
         })
  
         .when('/', {
             controller: 'CameraViewController',
-            templateUrl: 'modules/home/views/MotionHome.HTML'
+            templateUrl: 'modules/home/views/MotionHome.html'
         })
         .when('/Videos',{
            controller: 'ViewVideos',
