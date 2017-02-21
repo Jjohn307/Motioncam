@@ -57,7 +57,7 @@ angular.module('MotionCam', ['ngMaterial',
  
         .when('/', {
             controller: 'CameraViewController',
-            templateUrl: 'modules/home/views/MotionHome.html'
+            templateUrl: 'modules/home/views/MotionHome.HTML'
         })
         .when('/Videos',{
            controller: 'ViewVideos',
