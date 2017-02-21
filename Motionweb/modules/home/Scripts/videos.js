@@ -7,14 +7,14 @@ angular.module('Videos')
 
 	// Hardcode data until api is acessable
      $scope.videos = [
-     {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'},
-	 {video:'modules/home/images/Coming_soon.jpg'},
-     {video:'modules/home/images/Coming_soon.jpg'}
+     {video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'},
+	{video:'modules/home/Images/Coming_soon.jpg'},
+     {video:'modules/home/Images/Coming_soon.jpg'}
      ];
 
 
