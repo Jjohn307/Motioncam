@@ -1,7 +1,7 @@
 #! /bin/bash
 
 #load the module
-#sudo modprobe bcm2835-v4l2
+sudo modprobe bcm2835-v4l2
 
 cd /etc
 

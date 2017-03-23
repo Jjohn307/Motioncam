@@ -1,0 +1,19 @@
+#! /bin/bash
+
+#loads module on start if placed in ~/.bashrc
+#probably can create script to install once
+
+#sudo modprobe bcm2835-v4l2
+
+#mv to etc/modules
+cd /etc
+
+if [ $(grep -i i42c ) ];
+then
+	echo "module exist"
+else
+	echo "not exist"
+fi
+
+#grep bcm2835-v4l2
+#if bcm !exist then echo bcm 
