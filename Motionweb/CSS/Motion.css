@@ -19,6 +19,10 @@ h1
 {
  color: white;
 }
+md-dialog.md-transition-in, md-dialog.md-transition-out 
+{
+ width:40%;
+}
 
 body
 {
@@ -32,6 +36,18 @@ md-nav-bar.md-default-theme md-nav-ink-bar, md-nav-bar md-nav-ink-bar
 md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple
 {
 	color:#87cefa !important;
+}
+header {
+	overflow: auto;
+	transition: all .2s;
+}
+
+header.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #fff;
 }
 .main-menu
 {
@@ -177,6 +193,7 @@ md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .
 {
 	font-size: 11px;
     margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .login-button
@@ -191,6 +208,28 @@ md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .
 	width:45%;
 	margin-top: 10%;
 	
+}
+.popup-container
+{   width:100%;
+
+}
+.popup-form
+{
+	margin: 5%;
+    width: 90%;
+}
+.popup-button
+{
+	width: 100%;
+    background-color: cornflowerblue;
+    border-radius: 0px;
+    color: white;
+    
+}
+.popup-input
+{
+	border-radius: 0px !important;
+	width: 100% !important;
 }
 .input
 {
@@ -223,6 +262,11 @@ md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .
 {
 	margin-left: 20%;
 }
+.heightofsavedvideos
+{
+	height:150px;
+}
+
 .setting-container
 {
 	background-color: #87cefa !important;

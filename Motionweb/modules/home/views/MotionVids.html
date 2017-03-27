@@ -8,8 +8,29 @@
 </div>
 </div>
  <div class="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
- 	 <div ng-repeat="prev in videos" class="md-whiteframe-11dp col-md-3 col-sm-4 col-lg-3"  layout layout-align="center center">
-		<img class="image-fit " ng-src="{{prev.video}}">
+ 	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-3 col-sm-4 col-lg-3"  layout layout-align="center center">
+ 	 
+		<video
+    		id="my-player"
+    		class="video-js heightofsavedvideos"
+    		controls
+    		preload="auto"
+    		poster="//vjs.zencdn.net/v/oceans.png"
+    		data-setup='{}'
+    		>
+  			<source ng-src= "{{trustSrc(video.url)}}" type="video/mp4"> </source> 
+  		  	<p class="vjs-no-js">
+    				To view this video please enable JavaScript, and consider upgrading to a
+    				web browser that
+    		<a href="http://videojs.com/html5-video-support/" target="_blank">
+      				supports HTML5 video
+    		</a>
+ 		    </p>
+		</video>
 	 </div>
 </div>
 </div>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+<script>
+	
+</script>

@@ -6,6 +6,7 @@ angular.module('home',[]);
 angular.module('viewers',[]);
 angular.module('settings',[]);
 angular.module('Videos',[]);
+angular.module('AddCamera',[]);
 
 
 
@@ -16,7 +17,8 @@ angular.module('MotionCam', ['ngMaterial',
     'ngCookies',
     'viewers',
     'settings',
-    'Videos'
+    'Videos',
+    'AddCamera'
     
 ])
  .controller('ChangeLocationController', ['$location','$rootScope','$scope',function($location,$rootScope,$scope){
@@ -44,11 +46,18 @@ angular.module('MotionCam', ['ngMaterial',
         $rootScope.globals.currentUser = null;
         $location.path('/login');
     }
+    $scope.downloadPythonscript = function()
+    {
+        var content = 'file content for example';
+        var blob = new Blob([ content ], { type : 'text/plain' });
+        $scope.url = (window.URL || window.webkitURL).createObjectURL( blob );
+    }
  }])
     
-.config(['$routeProvider', function ($routeProvider) {
-
-    $routeProvider
+.config(['$routeProvider','$httpProvider','$compileProvider',function ($routeProvider,$httpProvider,$compileProvider) {
+   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob):/);
+   
+   $routeProvider
         .when('/login', {
             controller: 'LoginController',
             templateUrl: 'modules/Authentication/views/MotionLogin.HTML',
@@ -104,4 +113,23 @@ angular.module('MotionCam', ['ngMaterial',
         
          
     }]);
+    
         
+    /*var header = $('header');
+    var thewindow = $(window);
+    $(document).scroll(function(){
+        if(thewindow.scrollTop() >= 20)
+        {
+            if(!header.hasClass('fixed'))
+            {
+                header.addClass('fixed');
+            }
+            else
+            {
+                if(header.hasClass('fixed'))
+                {
+                    header.removeClass('fixed');
+                }
+            }
+        }
+    })*/
