@@ -2,7 +2,11 @@
 
 angular.module('home')
 
+<<<<<<< HEAD
 .controller('AddCameraController', ['$http','$scope','$rootScope','$sce', function($http,$scope,$rootScope,$sce){
+=======
+.controller('AddCameraController', ['$http','$scope','$rootScope', function($http,$scope,$rootScope){
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 	$scope.Submit = function(){
 
 	var data = $.param({name:$scope.cameraname,address:$scope.Address});
@@ -16,7 +20,11 @@ angular.module('home')
          data : data
       
 	}).then(function(response){
+<<<<<<< HEAD
 		console.log("success!! Added new camera")
+=======
+		alert('success');
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 	},function(){
 
 	});}
@@ -25,6 +33,7 @@ angular.module('home')
 .controller('CameraViewController',['$http','$mdDialog','$window','$cookieStore','$scope','$rootScope','$location','HomeService',function($http,$mdDialog,$window, $cookieStore, $scope,$rootScope,$location,HomeService){
 	$scope.user = $window.sessionStorage.username;
 	// console.log("hello world" + $window.sessionStorage.username);
+<<<<<<< HEAD
 	 $scope.trustSrc = function(src) {
           return $sce.trustAsResourceUrl(src);
      }
@@ -40,14 +49,35 @@ angular.module('home')
 					console.log(camUrl.url);
 					$scope.Cameras.push(camUrl);
 				}
+=======
+	$scope.Cameras= [ 
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'},
+		{url:'modules/home/Images/Coming_soon.jpg'}
+	];    
+
+	HomeService.obtainUsersVideofeed($rootScope.globals.currentUser.token,function(response){
+		if(response.success)
+		{
+			var obj=response.data;
+			alert(obj[0].address);
+
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 		}
 	 	else
 	 	{
 	 		alert(response.success);
+<<<<<<< HEAD
 	 	}
 	});
 	console.log($scope.camera);
 
+=======
+
+	 	}
+	});
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 	
 
 	$scope.showPrompt = function(ev) {

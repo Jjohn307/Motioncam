@@ -8,13 +8,20 @@
 </div>
 </div>
  <div class="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+<<<<<<< HEAD
  	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-4 col-sm-4 col-lg-4"  layout layout-align="center center">
 		
     <video
+=======
+ 	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-3 col-sm-4 col-lg-3"  layout layout-align="center center">
+ 	 
+		<video
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
     		id="my-player"
     		class="video-js heightofsavedvideos"
     		controls
     		preload="auto"
+<<<<<<< HEAD
     		poster="{{trustSrc(video.thumbnail)}}"
         >
   			<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
@@ -30,4 +37,24 @@
 <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
 <script type = "text/template">
 
+=======
+    		poster="//vjs.zencdn.net/v/oceans.png"
+    		data-setup='{}'
+    		>
+  			<source ng-src= "{{trustSrc(video.url)}}" type="video/mp4"> </source> 
+  		  	<p class="vjs-no-js">
+    				To view this video please enable JavaScript, and consider upgrading to a
+    				web browser that
+    		<a href="http://videojs.com/html5-video-support/" target="_blank">
+      				supports HTML5 video
+    		</a>
+ 		    </p>
+		</video>
+	 </div>
+</div>
+</div>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+<script>
+	
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 </script>

@@ -18,8 +18,12 @@ angular.module('MotionCam', ['ngMaterial',
     'viewers',
     'settings',
     'Videos',
+<<<<<<< HEAD
     'AddCamera',
     'ngSanitize'
+=======
+    'AddCamera'
+>>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
     
 ])
  .controller('ChangeLocationController', ['$location','$rootScope','$scope',function($location,$rootScope,$scope){
