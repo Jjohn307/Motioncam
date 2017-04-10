@@ -49,14 +49,33 @@ angular.module('Authentication')
         });
         };
 
+        service.resetpassword = function(email,callback)
+        {
+            data = $.param({email:email});
+            http({
+                url: "http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/auth/password/reset/",
+                method:'POST',
+                data:data,
+                headers: {'content-type':'application/x-www-form-urlencoded'}
+            }).then(function successCallback(response){
+                response.success = true;
+                callback(response);
+            },function errorCallback(response){
+                response.success = false;
+                response.message = "error with api"
+                callback(response);
+            });
+        };
+
       
     
     //set the users credentials to a global variable
-    service.SetCredentials = function (username, password) {  
+    service.SetCredentials = function (username, password,token) {  
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: password
+                    authdata: password,
+                    token: token
                 }
             };
   

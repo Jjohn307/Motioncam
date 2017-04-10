@@ -8,19 +8,19 @@
       <link rel="stylesheet" href="CSS/Motion.css" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link href="//vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
+     
   </head>
 
   <body>    
-    <div class="background-image container" ng-show="globals.currentUser"  style="width: inherit;" ng-cloak>
-    <div class="container" stickyMenu>
+    <header class="background-image container" ng-show="globals.currentUser"  style="width: inherit;" ng-cloak>
      <div class="running-man"><img src="images/logo-no-background.png" width="70%"  height="70%" /></div>
      <div class="float-right" ng-controller="ChangeLocationController as Change">
       <div layout="row">
       <md-menu-bar>
-        <span class="main-menu">Welcome {{globals.currentUser.username}}</span>
+        <span class="main-menu">Welcome {{globals.currentUser.user}}</span>
         <md-button ng-click="changetohome()" class="main-menu">Live feed</md-button>
         <md-button ng-click="changetovids()" class="main-menu">Saved videos</md-button>
-        <md-button ng-click="changetoviewers()" class="main-menu">Add viewers</md-button>  
         <md-button ng-click="changetosettings()" class="main-menu">Settings</md-button>
         <md-menu>   
           <md-button class="md-icon-button" ng-click="$mdOpenMenu()"><i class="material-icons">keyboard_arrow_down</i></md-button>
@@ -30,13 +30,15 @@
                   Logout
                 </md-button>
               </md-menu-item>
+               <md-menu-item>
+                  <a download="content.txt" ng-href="{{ url }}">download</a>
+              </md-menu-item>
           </md-menu-content>
       </md-menu>
       </md-menu-bar>
       </div>
      </div>
-    </div>
-    </div>
+    </header>
     <div class="container ">
         <div class="col-lg-12">
           <div ng-view></div>
@@ -55,6 +57,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js""></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.43.min.js"></script>
     <script src="JavaScript/app.js"></script>
     <script src="modules/home/Scripts/Home.js"></script>
     <script src="modules/Authentication/Scripts/Register.js"></script>
@@ -63,6 +67,8 @@
     <script src="modules/home/Scripts/viewers.js"></script>
     <script src="modules/home/Scripts/settings.js"></script>
     <script src="modules/home/Scripts/videos.js"></script>
+    <script src="modules/home/Scripts/HomeService.js"></script>
+    <script src="modules/home/Scripts/settingsservice.js"></script>
 
      
   </body>
