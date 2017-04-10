@@ -2,30 +2,18 @@
 
 angular.module('Videos')
 
-<<<<<<< HEAD
 .controller('ViewVideos', ['$rootScope','$scope','$location','$http','$sce',function($rootScope,$scope,$location,$http,$sce){
    
      $scope.videos = [];
      
-=======
-.controller('ViewVideos', ['$scope','$location','$http','$sce',function($scope,$location,$http,$sce){
-     $scope.videos = [];
->>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 
-     $scope.trustSrc = function(src) {
-          return $sce.trustAsResourceUrl(src);
-     }
 
-<<<<<<< HEAD
      // lets video.js know that this is a valid source
      $scope.trustSrc = function(src) {
           return $sce.trustAsResourceUrl(src);
      }
 
      /*$http({
-=======
-     $http({
->>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
           url : 'http://d3htql0kckepan.cloudfront.net/',
           method: 'GET'
           }).then(function successcallback(response){
@@ -34,18 +22,12 @@ angular.module('Videos')
                var clientid = $(xml).find('Key').each(function(){
                     if($(this).text().match(/\bhello[^\b]*?\b/gi) != null)
                     {
-<<<<<<< HEAD
                          var keyandurls = {"key":String($(this).text()),"url":"http://d3htql0kckepan.cloudfront.net/" + $(this).text()};
                          $scope.videos.push(keyandurls);
-=======
-                         var urls = {"url":"http://d3htql0kckepan.cloudfront.net/" + $(this).text()};
-                         $scope.videos.push(urls);
->>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
                     }
                })
           },function errorcalback(response){
                alert('failed');
-<<<<<<< HEAD
 
           });
         */
@@ -113,10 +95,6 @@ angular.module('Videos')
       });
 
      }*/
-=======
-
-          });
->>>>>>> ec543b9df7719880de8c976910eac3be22a4abc5
 	// Hardcode data until api is acessable
     
 
