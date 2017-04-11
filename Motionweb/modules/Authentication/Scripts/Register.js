@@ -14,8 +14,8 @@ angular.module('Authentication')
 	 		}
 	 		else
 	 		{
-	 			alert("Error Username already created");
-	 			$scope.dataLoading = false;             
+	 			console.log(response.status);
+ 	 			$scope.dataLoading = false;             
 
 	 		}
 

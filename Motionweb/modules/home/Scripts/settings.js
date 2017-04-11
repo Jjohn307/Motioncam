@@ -48,6 +48,23 @@ angular.module('settings')
 				};
 			  }
 		});
+
+	SETTINGSERVICE.notify(function(response)
+	{
+		if(response.success)
+		{
+			 $scope.data.notifications = response.data.email_notify;
+			 console.log("returned true"+response.data.email_notify);
+		}
+		else
+		{
+			$scope.data.notifications = false;
+			console.log(response.status);
+		}
+		 
+	});
+	
+
 	$scope.updateschedule = function(){
 		$scope.schedule.monday = $scope.data.days[0].wanted;
 		$scope.schedule.tuesday = $scope.data.days[1].wanted;
@@ -58,6 +75,7 @@ angular.module('settings')
 		$scope.schedule.sunday = $scope.data.days[6].wanted;
 		console.log($scope.schedule);
 		var data = $.param($scope.schedule);
+		var notify = $.param($scope.data.notifications);
 		SETTINGSERVICE.updateschedule(data, function(response){
 			if(response.success)
 			{ debugger;
@@ -67,7 +85,19 @@ angular.module('settings')
 			{
 				console.log("fail");
 			}
-		})
+		});
+		SETTINGSERVICE.updatenotification(notify,function(response)
+		{
+			if(response.success)
+			{
+				console.log("updated notifications");
+			}
+			else
+			{
+				console.log("failed to update notifications");
+			}
+		}
+		);
 	}
 	
 	

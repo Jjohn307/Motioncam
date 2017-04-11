@@ -32,9 +32,9 @@ angular.module('Authentication')
     };
     
       service.register = function (username,password,email,callback) {
-        var data = $.param({username:username,password:password,email:email});
+        var data = $.param({email:email,password:password,username:username});
         $http({
-         url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/register/',
+         url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/auth/register/',
          method:'POST',
          data:data,
          headers:{'content-type':'application/x-www-form-urlencoded'}

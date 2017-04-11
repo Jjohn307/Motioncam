@@ -43,7 +43,44 @@ angular.module('settings')
        callback(response);
  	});
  };
+service.notify = function(callback)
+{
+	$http({
+		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/hello/',
+		method: 'GET',
+		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token,
+ 					'content-type' : 'application/json'}
+	}).then(function successcallback (response)
+	{
+		response.success =true;
+		callback(response);
+	},
+	function errorcallback(response)
+	{
+		response.success =false;
+		callback(response);
+	});
+};
+service.updatenotification =  function(data,callback)
+{
+	$http({
+		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/hello/',
+		method: 'POST',
+		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token},
+		data:data
+	}).then(function successcallback(response)
+	 {
+	 	response.success = true;
+	 	callback(response);
+	 },
+	 function errorcallback(response)
+	 {
+	 	response.success = false;
+	 	callback(response);
+	 }
+	);
+};
  return service;
-}]
+}
+]
 );
-
