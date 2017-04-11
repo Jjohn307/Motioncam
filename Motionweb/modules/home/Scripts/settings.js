@@ -18,12 +18,12 @@ angular.module('settings')
 				to: new Date($scope.schedule.time_to),
 				days : [
     			{ name: 'Monday', wanted : $scope.schedule.monday},
-    			{ name: 'tuesday', wanted: $scope.schedule.tuesday},
-    			{ name: 'wednesday', wanted: $scope.schedule.wednesday},
-    			{ name: 'thursday', wanted: $scope.schedule.thursday},
-    			{ name: 'friday', wanted: $scope.schedule.friday},
-    			{ name: 'saturday',wanted: $scope.schedule.saturday},
-    			{ name: 'sunday', wanted:$scope.schedule.sunday} ]
+    			{ name: 'Tuesday', wanted: $scope.schedule.tuesday},
+    			{ name: 'Wednesday', wanted: $scope.schedule.wednesday},
+    			{ name: 'Thursday', wanted: $scope.schedule.thursday},
+    			{ name: 'Friday', wanted: $scope.schedule.friday},
+    			{ name: 'Saturday',wanted: $scope.schedule.saturday},
+    			{ name: 'Sunday', wanted:$scope.schedule.sunday} ]
 				};
 			  }
 			  else
@@ -39,12 +39,12 @@ angular.module('settings')
 				to:  new Date(),
 				days : [
     			{ name: 'Monday', wanted :false},
-    			{ name: 'tuesday', wanted: false},
-    			{ name: 'wednesday', wanted: false},
-    			{ name: 'thursday', wanted: false},
-    			{ name: 'friday', wanted: false},
-    			{ name: 'saturday',wanted: false},
-    			{ name: 'sunday', wanted:false} ]
+    			{ name: 'Tuesday', wanted: false},
+    			{ name: 'Wednesday', wanted: false},
+    			{ name: 'Thursday', wanted: false},
+    			{ name: 'Friday', wanted: false},
+    			{ name: 'Saturday',wanted: false},
+    			{ name: 'Sunday', wanted:false} ]
 				};
 			  }
 		});

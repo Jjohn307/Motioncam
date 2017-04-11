@@ -3,7 +3,7 @@
       <div class="login-text">Camera Modifications</div>
   <div class="row">
   <div class="setting-space col-md-6">
-         Enable Camera:
+         Camera Motion Detection:
    <md-switch ng-model = "data.cb1" arialabel="Enable Camera" ng-true-value = "'Yes'" ng-false-value="'No'">
  	    {{data.cb1}}
    </md-switch>
@@ -14,23 +14,9 @@
  	 {{data.notifications}}
    </md-switch>
   </div>
-  <div class=" col-md-3 settings-space">Time Interval: 
-  </div>
-  <div class="setting-space col-md-9">
-      <md-checkbox ng-model="data.timeinterval" aria-label="timeinterval"></md-checkbox>
-  </div>
-  <div ng-show="data.timeinterval">
-   <div class="col-md-6 setting-space">
-     From:
-     <input type="time" name="" ng-model="data.from" md-placeholder="Enter Time"/>
-   </div>
-   <div class="col-md-6 setting-space">
-     To:
-    <input type="time" ng-model="data.to" md-placeholder="Enter Time" min="08:00:00" max="17:000:00"/>
-   </div>
-  </div>
+ 
   <div class="col-md-3 setting-space">
-  	 Set Time:
+  	 Set Days:
     </div>
     <div class="col-md-9 setting-space">
      <md-checkbox ng-model="data.setdays" aria-label="settime"></md-checkbox>
@@ -45,6 +31,22 @@
   </div>
    <div>
      <md-button ng-click="updateschedule()"></md-button>
+   </div>
+  </div>
+  
+   <div class=" col-md-3 settings-space">Set Time: 
+  </div>
+  <div class="setting-space col-md-9">
+      <md-checkbox ng-model="data.timeinterval" aria-label="timeinterval"></md-checkbox>
+  </div>
+  <div ng-show="data.timeinterval">
+   <div class="col-md-6 setting-space">
+     From:
+     <input type="time" name="" ng-model="data.from" md-placeholder="Enter Time"/>
+   </div>
+   <div class="col-md-6 setting-space">
+     To:
+    <input type="time" ng-model="data.to" md-placeholder="Enter Time" min="08:00:00" max="17:000:00"/>
    </div>
   </div>
 </div>
