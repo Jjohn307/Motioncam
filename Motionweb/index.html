@@ -19,20 +19,26 @@
      <div class="float-right" ng-controller="ChangeLocationController as Change">
       <div layout="row">
       <md-menu-bar>
-        <span class="main-menu">Welcome {{globals.currentUser.user}}</span>
         <md-button ng-click="changetohome()" class="main-menu">Live feed</md-button>
         <md-button ng-click="changetovids()" class="main-menu">Saved videos</md-button>
         <md-button ng-click="changetosettings()" class="main-menu">Settings</md-button>
+	    <span class="main-menu">Welcome {{globals.currentUser.username}}</span>
+
         <md-menu>   
           <md-button class="md-icon-button" ng-click="$mdOpenMenu()"><i class="material-icons">keyboard_arrow_down</i></md-button>
             <md-menu-content width="2">
+			<md-menu-item>
+                <md-button>
+                  Profile
+                </md-button>
+              </md-menu-item>
               <md-menu-item>
                 <md-button ng-click="logout()">
                   Logout
                 </md-button>
               </md-menu-item>
                <md-menu-item>
-                  <a download="content.txt" ng-href="{{ url }}">download</a>
+                  <a download="content.txt" ng-href="{{ url }}">Download</a>
               </md-menu-item>
           </md-menu-content>
       </md-menu>
@@ -58,7 +64,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.43.min.js"></script>
     <script src="JavaScript/app.js"></script>
     <script src="modules/home/Scripts/Home.js"></script>
