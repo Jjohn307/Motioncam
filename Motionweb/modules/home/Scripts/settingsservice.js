@@ -26,7 +26,7 @@ angular.module('settings')
  service.getsettings = function(callback)
  {
  	$http({
- 		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/schedule/detail/hello/',
+ 		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/schedule/detail/' + $rootScope.globals.currentUser.username + '/',
  		method:'GET',
  		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token,
  					'content-type' : 'application/json'}
@@ -46,7 +46,7 @@ angular.module('settings')
 service.notify = function(callback)
 {
 	$http({
-		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/hello/',
+		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/' + $rootScope.globals.currentUser.username +'/',
 		method: 'GET',
 		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token,
  					'content-type' : 'application/json'}
@@ -64,8 +64,8 @@ service.notify = function(callback)
 service.updatenotification =  function(data,callback)
 {
 	$http({
-		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/hello/',
-		method: 'POST',
+		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/'+ $rootScope.globals.currentUser.username +'/',
+		method: 'PUT',
 		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token},
 		data:data
 	}).then(function successcallback(response)
