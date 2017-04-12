@@ -21,12 +21,12 @@ angular.module('home')
 		to:  new Date(),
 		days : [
     			{ name: 'Monday', wanted: false },
-    			{ name: 'tuesday', wanted: false},
-    			{ name: 'wednesday', wanted: false},
-    			{ name: 'thursday', wanted: false},
-    			{ name: 'friday', wanted: false},
-    			{ name: 'saturday',wanted:false},
-    			{ name: 'sunday', wanted:false} ]
+    			{ name: 'Tuesday', wanted: false},
+    			{ name: 'Wednesday', wanted: false},
+    			{ name: 'Thursday', wanted: false},
+    			{ name: 'Friday', wanted: false},
+    			{ name: 'Saturday',wanted:false},
+    			{ name: 'Sunday', wanted:false} ]
 	};
 	
 

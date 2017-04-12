@@ -8,8 +8,21 @@
 </div>
 </div>
  <div class="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
- 	 <div ng-repeat="prev in videos" class="md-whiteframe-11dp col-md-3 col-sm-4 col-lg-3"  layout layout-align="center center">
-		<img class="image-fit " ng-src="{{prev.video}}">
+ 	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-4 col-sm-4 col-lg-4"  layout layout-align="center center">
+ 	 
+		<video
+    		id="my-player"
+    		class="video-js heightofsavedvideos"
+    		controls
+    		preload="auto"
+    		poster="{{trustSrc(video.thumbnail)}}"
+        >
+  			<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
+		</video>
+      <md-button class="md-icon-button" ng-click="deletevid(video)"><i class="material-icons">delete</i></md-button>
 	 </div>
 </div>
 </div>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc4.min.js"></script>
+<script src="//vjs.zencdn.net/5.11/video.min.js"></script>
+

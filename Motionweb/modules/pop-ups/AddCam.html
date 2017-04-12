@@ -1,0 +1,19 @@
+
+ <div class="popup-container ">
+ <form name="form" class=" popup-form" ng-submit="Submit()" role="form">
+    <div class="form-group">
+        <i class="fa fa-key"></i>
+        <input type="text" name="cameraname" id="cameraname" class="form-control popup-input" ng-model="cameraname" required placeholder= "Cameraname"/>
+        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Cameraname is required</span>
+    </div>
+    <div class="form-group">
+        <i class="fa fa-lock"></i>
+        <input type="Address" name="Address" id="Address" class="form-control popup-input" ng-model="Address" required placeholder="Address" />
+        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Address is required</span>
+    </div>
+    <div class="form-actions" float="left">
+        <button class="btn popup-button" type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-danger login-button">AddCamera</button>
+    </div>
+</form>
+</div>
+</div>

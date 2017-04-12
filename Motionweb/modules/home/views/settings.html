@@ -3,18 +3,38 @@
       <div class="login-text">Camera Modifications</div>
   <div class="row">
   <div class="setting-space col-md-6">
-         Enable Camera:
+         Camera Motion Detection:
    <md-switch ng-model = "data.cb1" arialabel="Enable Camera" ng-true-value = "'Yes'" ng-false-value="'No'">
  	    {{data.cb1}}
    </md-switch>
   </div>
   <div class="setting-space col-md-6">
   Notifications:
-   <md-switch ng-model = "data.notifications" arialabel="Notifications" ng-true-value = "'Yes'" ng-false-value="'No'">
+   <md-switch ng-model = "data.notifications" arialabel="Notifications" ng-true-value = "'on'" ng-false-value="'off'">
  	 {{data.notifications}}
    </md-switch>
   </div>
-  <div class=" col-md-3 settings-space">Time Interval: 
+ 
+  <div class="col-md-3 setting-space">
+  	 Set Days:
+    </div>
+    <div class="col-md-9 setting-space">
+     <md-checkbox ng-model="data.setdays" aria-label="settime"></md-checkbox>
+  </div>
+
+  
+   <div class="col-md-12 setting-space" ng-show="data.setdays">
+    <md-list-item style="max-width: 35%;" ng-repeat="day in data.days">
+      {{ day.name }}
+     <md-checkbox class="md-secondary" ng-model="day.wanted"></md-checkbox>
+   </md-list-item>
+  </div>
+   <div>
+     <md-button ng-click="updateschedule()"></md-button>
+   </div>
+  </div>
+  
+   <div class=" col-md-3 settings-space">Set Time: 
   </div>
   <div class="setting-space col-md-9">
       <md-checkbox ng-model="data.timeinterval" aria-label="timeinterval"></md-checkbox>
@@ -28,20 +48,5 @@
      To:
     <input type="time" ng-model="data.to" md-placeholder="Enter Time" min="08:00:00" max="17:000:00"/>
    </div>
-  </div>
-  <div class="col-md-3 setting-space">
-  	 Set Time:
-    </div>
-    <div class="col-md-9 setting-space">
-     <md-checkbox ng-model="data.setdays" aria-label="settime"></md-checkbox>
-  </div>
-
-  
-   <div class="col-md-12 setting-space" ng-show="data.setdays">
-    <md-list-item style="max-width: 35%;" ng-repeat="day in data.days">
-      {{ day.name }}
-     <md-checkbox class="md-secondary" ng-model="day.wanted"></md-checkbox>
-   </md-list-item>
-  </div>
   </div>
 </div>
