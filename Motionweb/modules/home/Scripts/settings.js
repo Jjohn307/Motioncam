@@ -54,7 +54,7 @@ angular.module('settings')
 		if(response.success)
 		{
 			 $scope.data.notifications = response.data.email_notify;
-			 console.log("returned true"+response.data.email_notify);
+			 console.log("returned true"+response.data);
 		}
 		else
 		{
@@ -74,8 +74,9 @@ angular.module('settings')
 		$scope.schedule.saturday = $scope.data.days[5].wanted;
 		$scope.schedule.sunday = $scope.data.days[6].wanted;
 		console.log($scope.schedule);
+		console.log('This is notify ' + $scope.data.notifications);
 		var data = $.param($scope.schedule);
-		var notify = $.param($scope.data.notifications);
+		var notify = {email_notify: $scope.data.notifications}
 		SETTINGSERVICE.updateschedule(data, function(response){
 			if(response.success)
 			{ debugger;

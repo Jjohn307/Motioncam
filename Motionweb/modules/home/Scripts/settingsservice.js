@@ -63,9 +63,10 @@ service.notify = function(callback)
 };
 service.updatenotification =  function(data,callback)
 {
+	
 	$http({
 		url:'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/notification/update/hello/',
-		method: 'POST',
+		method: 'PUT',
 		headers: { 'Authorization' : "jwt " + $rootScope.globals.currentUser.token},
 		data:data
 	}).then(function successcallback(response)
