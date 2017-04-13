@@ -1,24 +1,15 @@
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<body>
-
- <div class="md-padding setting-container">
+<div class="md-padding setting-container">
       <div class="login-text">Camera Modifications</div>
   <div class="row">
   <div class="setting-space col-md-6">
          Camera Motion Detection:
-   <md-switch ng-model = "data.cb1" aria-label="Enable Camera" ng-true-value = "'Enable'" ng-false-value="'Disable'">
+   <md-switch ng-model = "data.cb1" arialabel="Enable Camera" ng-true-value = "'Yes'" ng-false-value="'No'">
  	    {{data.cb1}}
    </md-switch>
   </div>
   <div class="setting-space col-md-6">
   Notifications:
-<<<<<<< HEAD
-   <md-switch ng-model = "data.notifications" arialabel="Notifications" ng-true-value = "true" ng-false-value="false">
-=======
-   <md-switch ng-model = "data.notifications" aria-label="Notifications" ng-true-value = "'Enable'" ng-false-value="'Disable'">
->>>>>>> d795cb126bc351faac10f397a8897adba5cd35f1
+   <md-switch ng-model = "data.notifications" arialabel="Notifications" ng-true-value = "'on'" ng-false-value="'off'">
  	 {{data.notifications}}
    </md-switch>
   </div>
@@ -34,10 +25,13 @@
    <div class="col-md-12 setting-space" ng-show="data.setdays">
     <md-list-item style="max-width: 35%;" ng-repeat="day in data.days">
       {{ day.name }}
-     <md-checkbox class="md-secondary" ng-model="day.wanted" aria-label={{day.name}}></md-checkbox>
+     <md-checkbox class="md-secondary" ng-model="day.wanted"></md-checkbox>
    </md-list-item>
   </div>
-  
+   <div>
+     <md-button ng-click="updateschedule()"></md-button>
+   </div>
+  </div>
   
    <div class=" col-md-3 settings-space">Set Time: 
   </div>
@@ -55,10 +49,3 @@
    </div>
   </div>
 </div>
-
-
- <div>
-     <md-button class='w3-button w3-round-xxlarge w3-indigo' ng-click="updateschedule()">Update</md-button>
-   </div>
-  </div>
-</body>

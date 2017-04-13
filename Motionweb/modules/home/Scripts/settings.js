@@ -1,7 +1,7 @@
 'use strict';
 angular.module('settings')
 .controller('SettingsController',['$scope','$location','SETTINGSERVICE',function($scope,$location,SETTINGSERVICE){
-	
+	var schedule ;
 	SETTINGSERVICE.getsettings(function(response)
 		{
 			if(response.success)
@@ -9,7 +9,7 @@ angular.module('settings')
 			    $scope.schedule = response.data;
 			    console.log($scope.schedule.monday);
 			    $scope.data = {
-				cb1: true,
+				cb1: false,
 				timeLength: 10,
 				notifications: true,
 				timeinterval: false,
@@ -30,7 +30,7 @@ angular.module('settings')
 			  {
 			  	console.log('error from settings');
 			  	$scope.data = {
-				cb1: true,
+				cb1: false,
 				timeLength: 10,
 				notifications: true,
 				timeinterval: false,
