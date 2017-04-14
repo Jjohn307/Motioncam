@@ -14,10 +14,10 @@ angular.module('Authentication')
                 if(response.success) {
                     $window.sessionStorage.username = $scope.username;
                     AuthenticationService.SetCredentials($scope.username, $scope.password,response.data.token);
-                    $http.get("/../downloadPython.php?user="+$scope.username).then(function(response){
-                      console.log("responseeeeee: " + response.data);
-                     alert("Downloading python code success");
-                   });
+                   //  $http.get("/../downloadPython.php?user="+$scope.username).then(function(response){
+                   //    console.log("responseeeeee: " + response.data);
+                   //   alert("Downloading python code success");
+                   // });
                     $location.path('/');                  
                 } 
                 else {

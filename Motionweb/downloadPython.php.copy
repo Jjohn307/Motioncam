@@ -11,12 +11,12 @@
     else{
         $cameraName = "CameraName";
     }
-    $file = "pythonFiles/Motion" . $user . $cameraName.".py";
-    $file2 = "pythonFiles/script" . $user . $cameraName.".sh";
+	$file = "pythonFiles/Motion" . $user . ".py";
 
 	//TODO code that user will download (Could be static for now)
 	$pythonCode =
-        "import numpy as np
+        "
+import numpy as np
 import imutils
 import datetime 
 import cv2
@@ -252,58 +252,11 @@ if __name__ == \"__main__\":
             if key == ord(\"q\"):
                 break";
 
-	$shellCode =
-        "#! /bin/bash
-
-#load the module
-sudo modprobe bcm2835-v4l2
-
-cd /etc
-
-#intalling
-#if module exist then do nothing, otherwise insert module
-if [ $(grep -i bcm2835-v4l2 modules) ];
-then
-	echo \"module exist\"
-else
-	echo bcm2835-v4l2 >> modules
-	echo \"not exist, please insert\"
-fi
-
-#python dependencies
-pip install boto numpy imutils
-sudo apt install python-opencv
-
-#mjpeg streamer dependencies
-#install mjpeg
-sudo apt-get install libjpeg8-dev imagemagick libv4l-dev
-cd ~/
-wget http://ec2-35-162-159-206.us-west-2.compute.amazonaws.com/downloads/mjpg-streamer.tar.gz
-tar -xvzf mjpg-streamer.tar.gz
-
-#will work after libv4l-dev is installed
-sudo ln -s /usr/include/libv4l1-videodev.h /usr/include/linux/videodev.h
-cd mjpg-streamer/
-make
-
-#assume that mjpg-strema is installed in home directory
-#cd ~/mjpg-streamer
-
-#run Streamer
-sudo ./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"
-
-#put name in curl download
-#download python
-curl http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motion".$user.$cameraName.".py";
-
 	// open file to write
-	$handle = fopen($file, "w") or die("Cannot open file python file" . $file);
+	$handle = fopen($file, "w") or die("Cannot open file" . $file);
 
 	fwrite($handle, $pythonCode);
 	fclose($handle);
 
-	$handle = fopen($file2, "w") or die ("Cannot opne shell file" . $file2);
-    fwrite($handle, $shellCode);
-    fclose($handle);
 	// echo "Type the following in the terminal <h2> curl http://localhost/".$file." | sudo python</h2>";
  ?>
