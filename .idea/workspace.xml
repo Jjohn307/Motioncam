@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9453792-c734-4dd7-9a85-a93bf1439e20" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/downloadDriver.sh" afterPath="$PROJECT_DIR$/scripts/downloadDriver.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Motionweb/downloadPython.php" afterPath="$PROJECT_DIR$/Motionweb/downloadPython.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,20 +88,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="downloadPython.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="downloadPython.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Motionweb/downloadPython.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5986">
-              <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="460">
+              <caret line="278" column="16" lean-forward="false" selection-start-line="278" selection-start-column="16" selection-end-line="278" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="downloadDriver.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="downloadDriver.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/downloadDriver.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
+            <state relative-caret-position="625">
               <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding />
             </state>
@@ -138,12 +138,12 @@
         <option value="$PROJECT_DIR$/Motionweb/pythonFiles/Motioncheese.py" />
         <option value="$PROJECT_DIR$/Motionweb/pythonFiles/MotionhelloCameraName.py" />
         <option value="$PROJECT_DIR$/Motionweb/pythonFiles/scripthelloCameraName.sh" />
-        <option value="$PROJECT_DIR$/Motionweb/downloadPython.php" />
         <option value="$PROJECT_DIR$/Motionweb/modules/Authentication/Scripts/Login.js" />
         <option value="$PROJECT_DIR$/Motionweb/modules/pop-ups/AddCam.html" />
         <option value="$PROJECT_DIR$/Motionweb/modules/home/Scripts/Home.js" />
         <option value="$PROJECT_DIR$/Motionweb/modules/pop-ups/execute_popup.html" />
         <option value="$PROJECT_DIR$/scripts/downloadDriver.sh" />
+        <option value="$PROJECT_DIR$/Motionweb/downloadPython.php" />
       </list>
     </option>
   </component>
@@ -463,12 +463,12 @@
       <workItem from="1490636692293" duration="1812000" />
       <workItem from="1492027371980" duration="5200000" />
       <workItem from="1492117313465" duration="13851000" />
-      <workItem from="1492258373399" duration="1215000" />
+      <workItem from="1492258373399" duration="1800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22078000" />
+    <option name="totallyTimeSpent" value="22663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -802,18 +802,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Motionweb/downloadPython.php">
+    <entry file="file://$PROJECT_DIR$/scripts/downloadDriver.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5986">
-          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="625">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/downloadDriver.sh">
+    <entry file="file://$PROJECT_DIR$/Motionweb/downloadPython.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="460">
+          <caret line="278" column="16" lean-forward="false" selection-start-line="278" selection-start-column="16" selection-end-line="278" selection-end-column="16" />
           <folding />
         </state>
       </provider>
