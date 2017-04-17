@@ -276,7 +276,7 @@ sudo apt-get -y install python-opencv
 
 #mjpeg streamer dependencies
 #install mjpeg
-sudo apt-get -y install libjpeg8-dev imagemagick libv4l-dev
+sudo apt-get -y install libjpeg8-dev imagemagick libv4l-dev libav-tools
 cd /home/pi
 wget http://ec2-35-162-159-206.us-west-2.compute.amazonaws.com/downloads/mjpg-streamer.tar.gz
 tar -xvzf mjpg-streamer.tar.gz
