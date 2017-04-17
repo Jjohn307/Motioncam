@@ -1,5 +1,5 @@
 <div class=" percentmargin5">
-  <div class="container center-title">
+  <div class="center-title">
   	<div class="float-left">
   		<h2>Live Feed </h2>
   	</div>
@@ -8,13 +8,16 @@
   	</div>     
   </div>
 <div class="row">
+  <div class ="col-md-12">
+      <button class="btn login-button add-view" ng-click="showPrompt()">Add Camera</button>    
+  </div>  
   <div ng-repeat="Camera in Cameras" class="margin-top">
   	<div class="col-md-6 col-lg-6 margin-bottom ">
-  		<img class="image-fit md-whiteframe-11dp" ng-src="{{Camera.url}}">
+  		<img class="image-fit md-whiteframe-11dp" fallback-src="modules/home/images/Coming_soon.jpg" ng-src="{{Camera.url}}"/>
+      <div class="col-md-12">
+         <button class="btn login-button add-view" ng-click="delete(Camera.id)"><i class="material-icons">delete</i></button>    
+    </div> 
   	</div>
  </div>  
- </div>
-  <div>
-  <button class="btn login-button add-view" ng-click="showPrompt()">Add Camera</button>    
-  </div>  
+ </div> 
   </div>

@@ -36,9 +36,9 @@ angular.module('home')
 			var array=[];
 			for(var i =0;i<obj.length;i++)
 				{
-					var camUrl = {'url':String(obj[i].address)}
-					console.log(camUrl.url);
-					$scope.Cameras.push(camUrl);
+					var cam = {'url':String(obj[i].address),'id':String(obj[i].cid)};
+					console.log(obj[i]);
+					$scope.Cameras.push(cam);
 				}
 		}
 	 	else
@@ -48,7 +48,18 @@ angular.module('home')
 	});
 	console.log($scope.camera);
 
-	
+    $scope.delete = function(id){
+    	HomeService.Deletestream(id,function(response){
+    			if(response.success)
+    			{
+    				console.log("Deletion successfull");			
+    			}
+    			else
+    			{
+                     console.log("Failure");
+    			}
+    	});
+    }
 
 	$scope.showPrompt = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
