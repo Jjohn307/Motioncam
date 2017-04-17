@@ -1,33 +1,69 @@
 <div>
-<div class="center-title col-md-12">
-<div class="float-left">
+<div>
+<div class="md-padding" align="center">
 <h2>Video gallery</h2>
 </div>
 </div>
-   
-     	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-4 col-sm-4 col-lg-4"  layout layout-align="center center">
-        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="">
-          <md-card-content>
-             <h2>Video</h2>
-              <video
-                id="my-player"
-                class="video-js heightofsavedvideos"
-                controls
-                preload="auto"
-                
-                >
-            <source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
-            </video>
-          </md-card-content>
-    	    <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-icon-button" ><i class="material-icons">get_app</i></md-button>
-            <md-button class="md-icon-button" ng-click="deletevid(video)"><i class="material-icons">delete</i></md-button>
-          </md-card-actions>
+
+<div>
+	<select ng-model="selectedName" ng-options="video.cam for video in videos"></select>
+    <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+	 <label for="pageSize">Videos per page:</label>
+    <select ng-model="pageSize" id="pageSize" class="form-control" >
+        <option value="6">6</option>
+        <option value="12">12</option>
+        <option value="18">18</option>
+        <option value="24">24</option>
+     </select>
+    <div class='md-padding' layout="row" layout-wrap >
+
+     	 <div  class="parent" ng-repeat="video in videos |filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"  layout-wrap>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch=""  >
+			  <md-card-content>
+				 <h4> {{video.video_name}}</h4>
+				 <video
+					id="my-player"
+					class="video-js"
+					controls = "true"
+					preload="auto" >
+				<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
+				</video>
+			    {{video.created_time}}
+
+			    </md-card-content>
+				
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button class="md-icon-button"  aria-label="Download" href= "{{trustSrc(video.Path)}}">
+						<i class="material-icons">get_app</i>
+						<md-tooltip>Download</md-tooltip>
+				</md-button>
+					
+				<md-button class="md-icon-button" ng-click="deletevid(video)" aria-label="Delete">
+						<i class="material-icons">delete</i>
+						<md-tooltip>Delete</md-tooltip>
+				</md-button>
+			  </md-card-actions>
 	     </md-card>
 
      </div>
-
+</div>
+	
+	<div align="center">
+	
+    <md-button align="center" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" >
+       <i class="material-icons">fast_rewind</i>
+	   <md-tooltip>Previous</md-tooltip>
+    </md-button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <md-button align="center" ng-disabled="currentPage>= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1" >
+        <i class="material-icons">fast_forward</i>
+	   <md-tooltip>Next</md-tooltip>
+    </md-button>
+	</div>
+</div>
 
 </div>
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc4.min.js"></script>
 <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
+
+

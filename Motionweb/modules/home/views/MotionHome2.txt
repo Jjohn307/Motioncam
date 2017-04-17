@@ -1,26 +1,39 @@
 <div>
-<div class="container center-title">
-<div class="float-left">
+<div>
+<div class="md-padding" align="center">
 <h2>Video gallery</h2>
 </div>
-<div class="float-left">
-	<img style="width: 27%;" src="CSS/CssImages/VHS-300x300.png"/>
+
+ <div class='md-padding' layout="row" layout-wrap >
+
+     	 <div  class="parent" ng-repeat="video in videos |filter:search"  layout-wrap>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch=""  >
+			  <md-card-content>
+				 <h6> {{video.video_name}}</h6>
+				 <video
+					id="my-player"
+					class="video-js heightofsavedvideos"
+					controls = "true"
+					preload="auto" >
+				<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
+				</video>
+			    </md-card-content>
+				
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button class="md-icon-button"  aria-label="Download" href= "{{trustSrc(video.Path)}}">
+						<i class="material-icons">get_app</i>
+						<md-tooltip>Download</md-tooltip>
+				</md-button>
+					
+				<md-button class="md-icon-button" ng-click="deletevid(video)" aria-label="Delete">
+						<i class="material-icons">delete</i>
+						<md-tooltip>Delete</md-tooltip>
+				</md-button>
+			  </md-card-actions>
+	     </md-card>
+
+     </div>
 </div>
-</div>
- <div class="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
- 	 <div ng-repeat="video in videos" class="md-whiteframe-11dp col-md-4 col-sm-4 col-lg-4"  layout layout-align="center center">
- 	 
-		<video
-    		id="my-player"
-    		class="video-js heightofsavedvideos"
-    		controls
-    		preload="auto"
-    		poster="{{trustSrc(video.thumbnail)}}"
-        >
-  			<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
-		</video>
-      <md-button class="md-icon-button" ng-click="deletevid(video)"><i class="material-icons">Delete</i></md-button>
-	 </div>
 </div>
 </div>
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc4.min.js"></script>

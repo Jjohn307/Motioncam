@@ -1,18 +1,45 @@
 'use strict';
 
 angular.module('Videos')
-
-.controller('ViewVideos', ['$rootScope','$scope','$location','$http','$sce',function($rootScope,$scope,$location,$http,$sce){
-   
+.controller('ViewVideos', ['$rootScope','$scope','$location','$http','$sce','$filter',function($rootScope,$scope,$location,$http,$sce,$filter){
+     $scope.currentPage = 0;
+     $scope.pageSize = 6;
      $scope.videos = [];
-     
+     $scope.q = '';
+
 
 
      // lets video.js know that this is a valid source
      $scope.trustSrc = function(src) {
           return $sce.trustAsResourceUrl(src);
      }
-
+	
+	
+	 $scope.getData = function () {
+      // needed for the pagination calc
+      // https://docs.angularjs.org/api/ng/filter/filter
+      return $filter('filter')($scope.videos, $scope.q)
+     /* 
+       // manual filter
+       // if u used this, remove the filter from html, remove above line and replace data with getData()
+       
+        var arr = [];
+        if($scope.q == '') {
+            arr = $scope.data;
+        } else {
+            for(var ea in $scope.data) {
+                if($scope.data[ea].indexOf($scope.q) > -1) {
+                    arr.push( $scope.data[ea] );
+                }
+            }
+        }
+        return arr;
+       */
+    }
+    
+    $scope.numberOfPages=function(){
+        return Math.ceil($scope.getData().length/$scope.pageSize);                
+    }
      /*$http({
           url : 'http://d3htql0kckepan.cloudfront.net/',
           method: 'GET'
@@ -47,7 +74,7 @@ angular.module('Videos')
 
                for(i =0;i<xml.length;i++)
                {
-                 var pathanddelete = {"id":xml[i].id,"Path":String(xml[i].path),"deleteurl":String(xml[i].delete),'thumbnail':String(xml[i].thumbnail)};
+                 var pathanddelete = {"id":xml[i].id,"Path":String(xml[i].path),"deleteurl":String(xml[i].delete),'thumbnail':String(xml[i].thumbnail), 'video_name':String(xml[i].video_name),'cam':String(xml[i].cam),'created_time':String(xml[i].created_time)};
                  $scope.videos.push(pathanddelete);
                }
               
@@ -98,4 +125,13 @@ angular.module('Videos')
 	// Hardcode data until api is acessable
     
 
-}]);
+}])
+
+//We already have a limitTo filter built-in to angular,
+//let's make a startFrom filter
+.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+});
