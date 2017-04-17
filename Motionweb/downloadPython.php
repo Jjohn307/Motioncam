@@ -148,7 +148,7 @@ def motiondetection(gray,frame,prev):
     thresh = cv2.erode(thresh,None,iterations=2)
     thresh = cv2.dilate(thresh, None, iterations=2)
     (cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
-        cv2.CHAIN_APPROX_SIMPLE)
+		cv2.CHAIN_APPROX_SIMPLE)
 
     for c in cnts:
         if cv2.contourArea(c) < 500:
@@ -290,11 +290,11 @@ make
 #cd ~/mjpg-streamer
 
 #run Streamer
-sudo ./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"
+sudo ./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"&
 
 #put name in curl download
 #download python
-curl http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motion".$user.$cameraName.".py";
+curl http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motion".$user.$cameraName.".py | python";
 
 	// open file to write
 	$handle = fopen($file, "w") or die("Cannot open file python file" . $file);
