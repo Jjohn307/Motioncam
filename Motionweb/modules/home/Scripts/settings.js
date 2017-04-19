@@ -9,13 +9,13 @@ angular.module('settings')
 			    $scope.schedule = response.data;
 			    console.log($scope.schedule.monday);
 			    $scope.data = {
-				cb1: false,
+				cb1: $scope.schedule.is_active,
 				timeLength: 10,
 				notifications: true,
 				timeinterval: false,
 				setdays: false,
-				from: new Date($scope.schedule.time_from),
-				to: new Date($scope.schedule.time_to),
+				from: toTime($scope.schedule.time_from),
+				to: toTime($scope.schedule.time_to),
 				days : [
     			{ name: 'Monday', wanted : $scope.schedule.monday},
     			{ name: 'Tuesday', wanted: $scope.schedule.tuesday},
@@ -66,6 +66,7 @@ angular.module('settings')
 	
 
 	$scope.updateschedule = function(){
+
 		$scope.schedule.monday = $scope.data.days[0].wanted;
 		$scope.schedule.tuesday = $scope.data.days[1].wanted;
 		$scope.schedule.wednesday = $scope.data.days[2].wanted;
@@ -103,3 +104,8 @@ angular.module('settings')
 	
 	
 }]);
+
+function toTime(timeString){
+    var timeTokens = timeString.split(':');
+    return new Date(1970,0,1, timeTokens[0], timeTokens[1], timeTokens[2]);
+}

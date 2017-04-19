@@ -81,11 +81,28 @@ angular.module('home')
     	HomeService.Deletestream(id,function(response){
     			if(response.success)
     			{
-    				console.log("Deletion successfull");			
+    				console.log("Deletion successfull");
+    				 HomeService.obtainUsersVideofeed($rootScope.globals.currentUser.token,function(response){
+    if(response.success)
+    {
+      var obj=response.data;
+      var array=[];
+      for(var i =0;i<obj.length;i++)
+        {
+          var cam = {'url':String(obj[i].address),'id':String(obj[i].cid)};
+          console.log(obj[i]);
+          $scope.Cameras.push(cam);
+        }
+    }
+    else
+    {
+      alert(response.success);
+    }
+  });		
     			}
     			else
     			{
-                     console.log("Failure");
+            console.log("Failure");
     			}
     	});
     }
@@ -102,4 +119,30 @@ angular.module('home')
 }, function() {
   $scope.status = 'You cancelled the dialog.';
 }) 
-}}]);
+}}])
+.directive('imageWithDownload', function($animate) {
+    return {
+        scope: {
+            thisSrc: "@src",
+            btn1action: "&btn1Action",
+            btn1label: "@btn1Label",
+        },
+        template: '<div class="row img-btn-container">' +
+            '<img class="image-fit md-whiteframe-11dp" fallback-src="modules/home/images/Coming_soon.jpg" ng-src="{{thisSrc}}"/>' +
+            '<div class="btn-group fade btn-img-overlay">' +
+            '<button ng-click="btn1action()" class="btn btn-sm btn-default">' +
+            '<i class="material-icons">delete</i> + {{btn1label}} ' +
+            '</button>' +
+            '</div>' +
+            '</div>',
+        link: function(scope, el, attrs) {
+            el.on('mouseenter', function() {
+                TweenMax.to($(".btn-img-overlay"), 0, {opacity: 1});
+            })
+            el.on('mouseleave', function() {
+                TweenMax.to($(".btn-img-overlay"), 1, {opacity: 0});
+            })
+        }
+
+    }
+});

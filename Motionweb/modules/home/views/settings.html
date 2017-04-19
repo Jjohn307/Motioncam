@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
-
- <div class="md-padding setting-container">
+ 
+<div class="md-padding setting-container">
       <div class="login-text">Camera Modifications</div>
-  <div class="row">
+ <div class="row">
   <div class="setting-space col-md-6">
          Camera Motion Detection:
    <md-switch ng-model = "data.cb1" aria-label="Enable Camera" ng-true-value = "'Enable'" ng-false-value="'Disable'">
@@ -20,7 +20,8 @@
  	 {{data.notifications}}
    </md-switch>
   </div>
- 
+  </div>
+ <div class="row" >
   <div class="col-md-3 setting-space">
   	 Set Days:
     </div>
@@ -44,12 +45,12 @@
   </div>
   <div ng-show="data.timeinterval">
    <div class="col-md-6 setting-space">
-     From:
+     From: 
      <input type="time" name="" ng-model="data.from" md-placeholder="Enter Time"/>
    </div>
    <div class="col-md-6 setting-space">
      To:
-    <input type="time" ng-model="data.to" md-placeholder="Enter Time" min="08:00:00" max="17:000:00"/>
+    <input type="time" ng-model="data.to" md-placeholder="Enter Time" />
    </div>
   </div>
 </div>

@@ -40,25 +40,7 @@ angular.module('Videos')
     $scope.numberOfPages=function(){
         return Math.ceil($scope.getData().length/$scope.pageSize);                
     }
-     /*$http({
-          url : 'http://d3htql0kckepan.cloudfront.net/',
-          method: 'GET'
-          }).then(function successcallback(response){
-               var obj  =  response;
-               var xml =$.parseXML(obj.data);
-               var clientid = $(xml).find('Key').each(function(){
-                    if($(this).text().match(/\bhello[^\b]*?\b/gi) != null)
-                    {
-                         var keyandurls = {"key":String($(this).text()),"url":"http://d3htql0kckepan.cloudfront.net/" + $(this).text()};
-                         $scope.videos.push(keyandurls);
-                    }
-               })
-          },function errorcalback(response){
-               alert('failed');
 
-          });
-        */
-    
      $http({
           url : 'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/api/video/list/hello/',
           method: 'GET',
@@ -84,7 +66,7 @@ angular.module('Videos')
 
           });
         
-        $scope.deletevid = function(vid){ 
+        /*$scope.deletevid = function(vid){ 
           $http({
             url: vid.deleteurl,
             headers: {
@@ -101,14 +83,14 @@ angular.module('Videos')
              console.log('failed');
           }
           )
-          };
+          };*/
 
 
-    /* $scope.deletevid = function(vid){ 
+     $scope.deletevid = function(vid){ 
       AWS.config.region = 'us-east-1';
       AWS.config.update({
-        accessKeyId: "AKIAI2HHX4MHC7TXQOTA",
-        secretAccessKey: "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" 
+        accessKeyId: "AKIAJAY32ULQFOURJW5Q",
+        secretAccessKey: "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" 
       });
 
 
@@ -121,7 +103,7 @@ angular.module('Videos')
         }
       });
 
-     }*/
+     }
 	// Hardcode data until api is acessable
     
 
