@@ -14,8 +14,8 @@ angular.module('settings')
 				notifications: true,
 				timeinterval: false,
 				setdays: false,
-				from: new Date($scope.schedule.time_from),
-				to: new Date($scope.schedule.time_to),
+				from:  $scope.schedule.time_from,
+				to: $scope.schedule.time_to,
 				days : [
     			{ name: 'Monday', wanted : $scope.schedule.monday},
     			{ name: 'Tuesday', wanted: $scope.schedule.tuesday},
@@ -66,6 +66,7 @@ angular.module('settings')
 	
 
 	$scope.updateschedule = function(){
+
 		$scope.schedule.monday = $scope.data.days[0].wanted;
 		$scope.schedule.tuesday = $scope.data.days[1].wanted;
 		$scope.schedule.wednesday = $scope.data.days[2].wanted;

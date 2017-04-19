@@ -1,4 +1,6 @@
-
+html{
+	
+}
 
 text
 {
@@ -260,13 +262,30 @@ header.fixed {
 {
 	height:150px;
 }
-
+.border
+{
+	border-bottom: 
+}
 .setting-container
 {
-	background-color: #87cefa !important;
-	border-radius: 10px 10px 10px 10px;
-	width:60%;
+	background-color: white !important;
+	/*border-radius: 10px 10px 10px 10px;*/
+	width:75%;
 	margin-top: 10%;
 	margin-left: 25%;
 	
+}.img-btn-container{
+    position:relative;
+    display:inline-block;
+    opacity: 1;
+}
+
+.btn-img-overlay {
+    position:absolute;
+    left:10px;
+    bottom:10px;
+}
+.md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon
+{   
+    background-color: #3f51b5 !important;
 }
