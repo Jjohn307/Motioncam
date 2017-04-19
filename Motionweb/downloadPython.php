@@ -308,7 +308,7 @@ make
 ./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"&
 
 #download and motion code
-wget -O motion.py http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motionh".$user.$cameraName.".py
+wget -O motion.py http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motion".$user.$cameraName.".py
 python motion.py";
 
 	// open file to write
