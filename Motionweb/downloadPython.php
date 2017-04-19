@@ -273,13 +273,23 @@ else
 	echo \"not exist, please insert\"
 fi
 
+cd /home/pi
+if [ $(grep -i \"python motion.py\" .bashrc) ];
+then 
+    echo \" exists\"
+else
+    echo \"cd ~/mjpg-streamer
+    sudo ./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"&
+    sleep 5
+    sudo python motion.py\" >> .bashrc
+fi
+
 #python dependencies
 pip install boto numpy imutils
 
 #mjpeg streamer dependencies
 #install mjpeg
 sudo apt-get -y install libjpeg8-dev imagemagick libv4l-dev libav-tools python-opencv
-cd /home/pi
 wget http://ec2-35-162-159-206.us-west-2.compute.amazonaws.com/downloads/mjpg-streamer.tar.gz
 tar -xvzf mjpg-streamer.tar.gz
 
