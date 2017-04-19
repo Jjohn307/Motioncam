@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9453792-c734-4dd7-9a85-a93bf1439e20" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Motionweb/downloadPython.php" afterPath="$PROJECT_DIR$/Motionweb/downloadPython.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="downloadPython.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Motionweb/downloadPython.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="281" column="73" lean-forward="false" selection-start-line="281" selection-start-column="73" selection-end-line="281" selection-end-column="73" />
+            <state relative-caret-position="450">
+              <caret line="287" column="30" lean-forward="true" selection-start-line="287" selection-start-column="30" selection-end-line="287" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -311,12 +310,12 @@
       <workItem from="1492458946829" duration="3874000" />
       <workItem from="1492529861220" duration="1691000" />
       <workItem from="1492535078680" duration="8827000" />
-      <workItem from="1492562803316" duration="1869000" />
+      <workItem from="1492562803316" duration="2385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44475000" />
+    <option name="totallyTimeSpent" value="44991000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Motionweb/downloadPython.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="281" column="73" lean-forward="false" selection-start-line="281" selection-start-column="73" selection-end-line="281" selection-end-column="73" />
+        <state relative-caret-position="450">
+          <caret line="287" column="30" lean-forward="true" selection-start-line="287" selection-start-column="30" selection-end-line="287" selection-end-column="30" />
           <folding />
         </state>
       </provider>
