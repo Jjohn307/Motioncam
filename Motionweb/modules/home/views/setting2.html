@@ -1,6 +1,7 @@
+<h2>Settings</h2>
 <div class="md-padding setting-container">
       <div class="login-text">Camera Modifications</div>
-  <div class="row">
+  <div class="row border">
   <div class="setting-space col-md-6">
          Camera Motion Detection:
    <md-switch ng-model = "data.cb1" arialabel="Enable Camera" ng-true-value = "'Yes'" ng-false-value="'No'">
@@ -13,21 +14,22 @@
  	 {{data.notifications}}
    </md-switch>
   </div>
- 
+</div>
+<div class="row border">
   <div class="col-md-3 setting-space">
   	 Set Days:
     </div>
     <div class="col-md-9 setting-space">
      <md-checkbox ng-model="data.setdays" aria-label="settime"></md-checkbox>
   </div>
-
-  
+ 
    <div class="col-md-12 setting-space" ng-show="data.setdays">
     <md-list-item style="max-width: 35%;" ng-repeat="day in data.days">
       {{ day.name }}
      <md-checkbox class="md-secondary" ng-model="day.wanted"></md-checkbox>
    </md-list-item>
   </div>
+  <div><hr></div>
    <div>
      <md-button ng-click="updateschedule()"></md-button>
    </div>

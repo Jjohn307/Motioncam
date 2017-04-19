@@ -66,6 +66,7 @@ angular.module('settings')
 	
 
 	$scope.updateschedule = function(){
+
 		$scope.schedule.monday = $scope.data.days[0].wanted;
 		$scope.schedule.tuesday = $scope.data.days[1].wanted;
 		$scope.schedule.wednesday = $scope.data.days[2].wanted;

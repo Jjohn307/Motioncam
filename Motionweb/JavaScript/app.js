@@ -22,8 +22,16 @@ angular.module('MotionCam', ['ngMaterial',
     'ngSanitize'
     
 ])
- .controller('ChangeLocationController', ['$location','$rootScope','$scope',function($location,$rootScope,$scope){
+ .controller('ChangeLocationController', ['$location','$rootScope','$scope','$mdSidenav',function($location,$rootScope,$scope, $mdSidenav){
     var originatorEv;
+    $scope.toggleLeft = buildToggler('left');
+    $scope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+  }
 
      $scope.openMenu = function($mdMenu, ev) {
       originatorEv = ev;
