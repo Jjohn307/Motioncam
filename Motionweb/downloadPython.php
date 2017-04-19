@@ -274,7 +274,7 @@ else
 fi
 
 cd /home/pi
-if [ $(grep -i motion.py .bashrc) ]; then
+if grep -i motion.py .bashrc; then
     echo \" exists\"
 else
     echo \"cd ~/mjpg-streamer
