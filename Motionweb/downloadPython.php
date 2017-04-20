@@ -37,7 +37,7 @@ from imutils.video import FPS
 #globals
 recording = False
 lengthofrecordingVideo = None
-recordingtime = 15
+recordingtime = 30
 writer = None
 videoQueue = Queue.Queue()
 runningconversionthread = False
@@ -165,7 +165,6 @@ def motiondetection(gray,frame,prev):
 
 if __name__ == \"__main__\":
     
-        notifyFile = open(\"notify.txt\", \"wb\")
         facialCascade = cv2.CascadeClassifier(\"haarcascades/haarcascade_frontalface_default.xml\")
         prev = None
         createdtime = None
@@ -183,7 +182,7 @@ if __name__ == \"__main__\":
             # and data['signal']
             if grabbed :
 
-                frame1 = frame;
+                frame1 = frame
                 frame = imutils.resize(frame, width=500)
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 if prev is None:
@@ -193,11 +192,11 @@ if __name__ == \"__main__\":
                 #result2 = pool.apply_async(facedetection,(gray,frame1))
                 #motion = result1.get()
                 motion = motiondetection(gray,frame,prev)
-                face = facedetection(gray,frame1)
-                if face:
+                #face = facedetection(gray,frame1)
+                if False:
 
-                    print \"face detected\"
-                    Recording(camera)
+                   print \"face detected\"
+                   #Recording(camera)
                     
                 elif motion:
                         
@@ -212,13 +211,13 @@ if __name__ == \"__main__\":
                                 sendnotificationTos3()
                                 recording = True
                                 lengthofrecordingVideo =  time.time()+recordingtime
-                                now = datetime.datetime.now();
+                                now = datetime.datetime.now()
                                 createdTime=now.strftime('%m%d%Y%H%M%S')
                                 filename =  createdTime+\".avi\"
                                 thumbnailfile = createdTime+'.jpg'
                                 fourcc = cv2.cv.CV_FOURCC(*'XVID')
                                 writer = cv2.VideoWriter(filename,fourcc,15.00,(640,480))
-                                cv2.imwrite(thumbnailfile,frame)
+                                cv2.imwrite(thumbnailfile,frame1)
                                 print \"There is suffient amount of evidence\"
                         else:
                                 print \"There is not suffient amount of evidence proving that motion detected was suspicous\"
@@ -229,12 +228,12 @@ if __name__ == \"__main__\":
 
                 if recording:
                         if lengthofrecordingVideo >= time.time():
-                                writer.write(frame)
-                                print \" recordinng video\"
+                                writer.write(frame1)
+                                print \" recording video\"
                         else:
                                 writer.release()
                                 recording = False
-                                lengthofrecordedvideo = None
+                                lengthofrecordingVideo  = None
                                 videoQueue.put(createdTime)
                                 createdTime = None
                                 
@@ -248,12 +247,11 @@ if __name__ == \"__main__\":
                         
             else:
                 print \"error when reading from camera\"
-                notifyFile.close()
                 break
             key = cv2.waitKey(1) & 0xFF
             if key == ord(\"q\"):
-                notifyFile.close()
-                break";
+                break
+";
 
 	$shellCode =
         "#! /bin/bash
@@ -278,7 +276,7 @@ if grep -i motion.py .bashrc; then
     echo \" exists\"
 else
     echo \"cd ~/mjpg-streamer
-sudo ./mjpg_streamer -i './input_uvc.so -f 5 -r 640x320 -n -y -q 20' -o './output_http.so -w ./www -p 80'&
+sudo ./mjpg_streamer -i './input_uvc.so -f 10 -r 640x480 -n -y -q 20' -o './output_http.so -w ./www -p 80'&
 sleep 5
 sudo python motion.py\" >> .bashrc
 fi
@@ -299,12 +297,12 @@ make
 
 #assume that mjpg-strema is installed in home directory
 #cd ~/mjpg-streamer
-
+touch notify.txt
 #cp startScript.sh to /etc/init.d
 # sudo chmod 755 /etc/init.d/startScript.sh
 
 #run Streamer
-./mjpg_streamer -i \"./input_uvc.so -f 5 -r 640x320 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"&
+./mjpg_streamer -i \"./input_uvc.so -f 10 -r 640x480 -n -y -q 20\" -o \"./output_http.so -w ./www -p 80\"&
 
 #download and motion code
 wget -O motion.py http://ec2-52-27-178-28.us-west-2.compute.amazonaws.com/pythonFiles/Motion".$user.$cameraName.".py
