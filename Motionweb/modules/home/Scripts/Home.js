@@ -65,7 +65,7 @@ angular.module('home')
 			var array=[];
 			for(var i =0;i<obj.length;i++)
 				{
-					var cam = {'url':String(obj[i].address),'id':String(obj[i].cid)};
+					var cam = {'url':String(obj[i].address),'id':String(obj[i].cid),'name':String(obj[i].name)};
 					console.log(obj[i]);
 					$scope.Cameras.push(cam);
 				}
@@ -126,13 +126,15 @@ angular.module('home')
             thisSrc: "@src",
             btn1action: "&btn1Action",
             btn1label: "@btn1Label",
+            btn2label:"@btn2Label"
         },
         template: '<div class="row img-btn-container">' +
-            '<img class="image-fit md-whiteframe-11dp" fallback-src="modules/home/images/Coming_soon.jpg" ng-src="{{thisSrc}}"/>' +
-            '<div class="btn-group fade btn-img-overlay">' +
-            '<button ng-click="btn1action()" class="btn btn-sm btn-default">' +
-            '<i class="material-icons">delete</i> + {{btn1label}} ' +
-            '</button>' +
+            '<img class="image-fit md-whiteframe-11dp" fallback-src="modules/home/images/there-is-no-connected-camera-mac.jpg" ng-src="{{thisSrc}}"/>' +
+            '<div class="btn-group fade btn-img-overlay style="opacity: 0; width: 75%;">' +
+            '<span class="center">{{btn1label}}</span>' +
+            '<md-button ng-click="btn1action()" class="md-icon-button" style="margin-left: 50%;">' +
+            '<i class="material-icons">delete</i>' +
+            '</md-button>' +
             '</div>' +
             '</div>',
         link: function(scope, el, attrs) {

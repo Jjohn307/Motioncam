@@ -13,49 +13,28 @@
       <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
   </head>
 
-  <body>    
+  <body class="" ng-controller="ChangeLocationController as Change">    
     <header class="background-image container" ng-show="globals.currentUser"  style="width: inherit;" ng-cloak>
-     <div class="running-man"><img src="images/logo-no-background.png" width="70%"  height="70%" /></div>
-     <div class="" ng-controller="ChangeLocationController as Change">
-      <div layout="row">
-      <md-menu-bar>
-        <md-button ng-click="changetohome()" class="main-menu">Live feed</md-button>
-        <md-button ng-click="changetovids()" class="main-menu">Saved videos</md-button>
-        <md-button ng-click="changetosettings()" class="main-menu">Settings</md-button>
-	    <span class="main-menu">Welcome {{globals.currentUser.username}}</span>
-
-        <md-menu>   
-          <md-button class="md-icon-button" ng-click="$mdOpenMenu()"><i class="material-icons">keyboard_arrow_down</i></md-button>
-            <md-menu-content width="2">
-			<md-menu-item>
-                <md-button>
-                  Profile
-                </md-button>
-              </md-menu-item>
-              <md-menu-item>
-                <md-button ng-click="logout()">
-                  Logout
-                </md-button>
-              </md-menu-item>
-               <md-menu-item>
-                  <a download="content.txt" ng-href="{{ url }}">Download</a>
-              </md-menu-item>
-          </md-menu-content>
-      </md-menu>
-      </md-menu-bar>
+     <div class="running-man"><img src="images/logo-no-background.png" width="50%"  height="70%" /></div>
+      <div layout="row" class="float-right">
+      <span class="main-menu username">Welcome {{globals.currentUser.username}}</span>
       </div>
-     </div>
+     
     </header>
-    <div class="container ">
-        <div class="col-lg-12">
+     <div id = "realheight"  class="row" style="margin-right: 0px;">
+    <div class="col-lg-2 col-md-2 col-sm-2" ng-show="globals.currentUser" style="padding:0px">
+    <md-sidenav  style="height:836px" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-button ng-click="changetohome()" class="main-menu"><div><i class="material-icons center_icon" style="margin-left: -13%;">visibility</i> Live feed</div></md-button>
+        <md-button ng-click="changetovids()" class="main-menu"><div><i class="material-icons center_icon">video_label</i> Saved videos</div></md-button>
+        <md-button ng-click="changetosettings()" class="main-menu"><div><i class="material-icons center_icon" style="margin-left: -16%;">settings</i> Settings</div></md-button>
+        <md-button ng-click="logout()"><div><i class="material-icons center_icon" style="margin-left: -17%;">keyboard_arrow_down</i> Logout</div></md-button>
+        <md-button download="content.txt" ng-href="{{ url }}"><i class="material-icons"  style="margin-left: -5%;">file_download</i> Download</md-button>
+    </md-sidenav>
+      </div>
+        <div  id ="sizeof" class="col-lg-10 col-md-10 col-sm-10">
           <div ng-view></div>
         </div>
       </div>
-    </div>
-      
-
- 
-
     <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="//code.angularjs.org/1.5.5/angular-route.js"></script>
@@ -77,7 +56,9 @@
     <script src="modules/home/Scripts/HomeService.js"></script>
     <script src="modules/home/Scripts/settingsservice.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.7/TweenMax.min.js"></script>
+    <script type="text/javascript">
 
+    </script>
      
   </body>
 

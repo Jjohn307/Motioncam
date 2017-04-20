@@ -24,19 +24,6 @@ angular.module('MotionCam', ['ngMaterial',
 ])
  .controller('ChangeLocationController', ['$location','$rootScope','$scope','$mdSidenav',function($location,$rootScope,$scope, $mdSidenav){
     var originatorEv;
-    $scope.toggleLeft = buildToggler('left');
-    $scope.toggleRight = buildToggler('right');
-
-    function buildToggler(componentId) {
-      return function() {
-        $mdSidenav(componentId).toggle();
-      };
-  }
-
-     $scope.openMenu = function($mdMenu, ev) {
-      originatorEv = ev;
-      $mdMenu.open(ev);
-    }
 
     $scope.changetohome = function(){
             $location.path('/');
@@ -94,16 +81,9 @@ angular.module('MotionCam', ['ngMaterial',
             templateUrl:'modules/home/views/settings.html'
         })
         .otherwise({ redirectTo: '/login' });
+
 }])
 
-.directive('stickyMenu',function($mdSticky,$compile){
-    return{
-        restrict:'E',
-        link: function(scope,element){
-            $mdSticky(scope,element);
-        }
-    };
-})
 .directive('fallbackSrc', function () {
   var fallbackSrc = {
     link: function postLink(scope, iElement, iAttrs) {
@@ -138,7 +118,39 @@ angular.module('MotionCam', ['ngMaterial',
        
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
-            if (($location.path() !== '/login' && $location.path() !== '/register') && !$rootScope.globals.currentUser) {
+            if($location.path().match('^(\/)([activate]+)(\/)(.+)(\/)(.+)$'))
+            {
+                var str = $location.path();
+                console.log("hit");
+                var splitedurl = str.split("/");
+                var uid = splitedurl[2];
+                var token = splitedurl[3];
+                console.log(uid + " "+token)
+
+                var data = $.param({uid:uid,token:token});
+                var success = true;
+                $http({
+                    url: 'http://ec2-54-242-89-175.compute-1.amazonaws.com:8000/auth/activate/',
+                    method: 'POST',
+                    headers: {'content-type':'application/json'},
+                    data: data
+                }).then(function successCallback(){
+                    success = true;
+                },function errorCallback(){
+                    success = false;
+                });
+                if(success)
+                {
+                    alert("congrats your account is activated");
+                    $location.path('/login');
+                }
+                else
+                {
+                    alert("activation failed");
+                    $location.path('/login');
+                }
+            }
+           else if (($location.path() !== '/login' && $location.path() !== '/register') && !$rootScope.globals.currentUser) {
                 $location.path('/login');
             }
        
@@ -146,7 +158,8 @@ angular.module('MotionCam', ['ngMaterial',
 
         
          
-    }]);
+    }])
+          
     
         
     /*var header = $('header');
