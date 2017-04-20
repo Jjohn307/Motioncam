@@ -18,7 +18,8 @@
 					id="my-player"
 					class="video-js"
 					controls = "true"
-					preload="auto" >
+					preload="auto"
+					poster = {{trustSrc(video.thumbnail)}}>
 				<source ng-src= "{{trustSrc(video.Path)}}" type="video/mp4">
 				</video>
 			    {{video.created_time}}
