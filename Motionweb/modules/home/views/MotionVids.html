@@ -6,8 +6,25 @@
 </div>
 
 <div>
-    <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
-	
+    
+   <div class="row">
+       <div class="col-md-6">
+         <input ng-model="q" id="search" class="form-control searchbar" placeholder="Search">
+       </div>
+       <div class="col-md-6">
+	     <div class="float-right" style="margin-right: 6%;"> 
+	       <select style='width:100px; border-radius:0px;' ng-size=10 ng-model="pageSize" id="pageSize" class="form-control float-left" >
+			 <option value="6">6</option>
+			 <option value="12">12</option>
+			 <option value="18">18</option>
+			 <option value="24">24</option>
+		   </select>
+		 </div>
+		  <div class="float-right" style="margin-top: 7px; margin-right: 5px;">
+	       <label style="margin-top: " for="pageSize">Videos per page:</label>
+	     </div> 
+      </div>
+    </div>
     <div class='md-padding' layout="row" layout-wrap >
 
      	 <div  class="parent" ng-repeat="video in videos |filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"  layout-wrap>
@@ -43,15 +60,6 @@
 </div>
 	
 	<div  align="center">
-	  <div class="float-left"><label for="pageSize">Videos per page:</label></div>
-	  <div class = "float-right">
-		<select style='width:100px' ng-size=10 ng-model="pageSize" id="pageSize" class="form-control" >
-			<option value="6">6</option>
-			<option value="12">12</option>
-			<option value="18">18</option>
-			<option value="24">24</option>
-		 </select> 
-		 </div>
     <md-button align="center" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" >
        <i class="material-icons">fast_rewind</i>
 	   <md-tooltip>Previous</md-tooltip>

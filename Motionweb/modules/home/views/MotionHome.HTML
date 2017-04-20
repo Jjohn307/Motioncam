@@ -14,11 +14,16 @@
   <div ng-repeat="Camera in Cameras" class="margin-top">
   	<div class="col-md-6 col-lg-6 margin-bottom ">
     <div class="img-btn-container">
-       <div class="container">
-        <image-with-download src= {{Camera.url}} btn1-label={{Camera.name}} btn1-action="delete()"></image-with-download>
-      </div>
+        <image-with-download src= {{Camera.url}} btn1-label={{Camera.name}} btn1-action="delete(Camera.id)" ></image-with-download>
       </div>
   	</div>
  </div>  
  </div> 
+  <script type="text/javascript">
+     $(document).load(function () {
+          var height = $("#percentmargin5").height();
+          console.log(height);
+});
+</script>
   </div>
+ 
