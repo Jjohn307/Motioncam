@@ -25,6 +25,7 @@ angular.module('settings')
     			{ name: 'Saturday',wanted: $scope.schedule.saturday},
     			{ name: 'Sunday', wanted:$scope.schedule.sunday} ]
 				};
+				console.log($scope.schedule.time_to);
 			  }
 			  else
 			  {
@@ -54,11 +55,13 @@ angular.module('settings')
 		if(response.success)
 		{
 			 $scope.data.notifications = response.data.email_notify;
+			 $scope.data.Androidnotifications = response.data.android_notify;
 			 console.log("returned true"+response.data);
 		}
 		else
 		{
 			$scope.data.notifications = false;
+			$scope.data.Androidnotifications =false;
 			console.log(response.status);
 		}
 		 
@@ -66,7 +69,7 @@ angular.module('settings')
 	
 
 	$scope.updateschedule = function(){
-
+		$scope.schedule.is_active = $scope.data.cb1;
 		$scope.schedule.monday = $scope.data.days[0].wanted;
 		$scope.schedule.tuesday = $scope.data.days[1].wanted;
 		$scope.schedule.wednesday = $scope.data.days[2].wanted;
@@ -74,13 +77,17 @@ angular.module('settings')
 		$scope.schedule.friday =$scope.data.days[4].wanted;
 		$scope.schedule.saturday = $scope.data.days[5].wanted;
 		$scope.schedule.sunday = $scope.data.days[6].wanted;
+		$scope.schedule.time_from = sendtime($scope.data.from);
+		$scope.schedule.time_to = sendtime($scope.data.to);
+		console.log($scope.data.from);
 		console.log($scope.schedule);
 		console.log('This is notify ' + $scope.data.notifications);
+		console.log($scope.schedule.time_from);
 		var data = $.param($scope.schedule);
-		var notify = {email_notify: $scope.data.notifications}
+		var notify = {email_notify: $scope.data.notifications,android_notify:$scope.data.Androidnotifications};
 		SETTINGSERVICE.updateschedule(data, function(response){
 			if(response.success)
-			{ debugger;
+			{ 
 				console.log("update complete");
 			}
 			else
@@ -108,4 +115,10 @@ angular.module('settings')
 function toTime(timeString){
     var timeTokens = timeString.split(':');
     return new Date(1970,0,1, timeTokens[0], timeTokens[1], timeTokens[2]);
+};
+function sendtime(date)
+{
+   var str = String(date);
+   var array = str.split(" ");
+   return(array[4]);
 }

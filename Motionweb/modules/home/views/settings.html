@@ -6,18 +6,22 @@
 <div class="md-padding setting-container glass">
       <div class="login-text">Camera Modifications</div>
  <div class="row">
-  <div class="setting-space col-md-6">
+  <div class="setting-space col-md-4">
          Camera Motion Detection:
-   <md-switch ng-model = "data.cb1" aria-label="Enable Camera" ng-true-value = "'Enable'" ng-false-value="'Disable'">
- 	    {{data.cb1}}
+   <md-switch ng-model = "data.cb1" aria-label="Enable Camera" ng-true-value = "true" ng-false-value="false">
+ 	   
    </md-switch>
   </div>
-  <div class="setting-space col-md-6">
-  Notifications:
+  <div class="setting-space col-md-4">
+  Notification Email:
 
-   <md-switch ng-model = "data.notifications" aria-label="Notifications" ng-true-value = "'Enable'" ng-false-value="'Disable'">
+   <md-switch ng-model = "data.notifications" aria-label="Notifications" ng-true-value = "true" ng-false-value="false">
+   </md-switch>
+  </div>
+  <div class="setting-space col-md-4">
+  Notification Android:
 
- 	 {{data.notifications}}
+   <md-switch ng-model = "data.Androidnotifications" aria-label="Androidnotifications" ng-true-value = "true" ng-false-value="false">
    </md-switch>
   </div>
   </div>

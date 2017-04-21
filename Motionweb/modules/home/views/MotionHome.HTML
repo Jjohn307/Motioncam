@@ -14,7 +14,7 @@
   <div ng-repeat="Camera in Cameras" class="margin-top">
   	<div class="col-md-6 col-lg-6 margin-bottom ">
     <div class="img-btn-container">
-        <image-with-download src= {{Camera.url}} btn1-label={{Camera.name}} btn1-action="delete(Camera.id)" ></image-with-download>
+        <image-with-download src= {{Camera.url}} btn1-label={{Camera.name}} btn1-action="delete(Camera.id,Camera.index)" ></image-with-download>
       </div>
   	</div>
  </div>  

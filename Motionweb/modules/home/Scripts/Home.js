@@ -65,7 +65,7 @@ angular.module('home')
 			var array=[];
 			for(var i =0;i<obj.length;i++)
 				{
-					var cam = {'url':String(obj[i].address),'id':String(obj[i].cid),'name':String(obj[i].name)};
+					var cam = {'url':String(obj[i].address),'id':String(obj[i].cid),'name':String(obj[i].name),'index': i};
 					console.log(obj[i]);
 					$scope.Cameras.push(cam);
 				}
@@ -77,28 +77,31 @@ angular.module('home')
 	});
 	console.log($scope.camera);
 
-    $scope.delete = function(id){
+    $scope.delete = function(id,index){
     	HomeService.Deletestream(id,function(response){
     			if(response.success)
     			{
-    				console.log("Deletion successfull");
+             alert('video deleted');
+             $scope.Cameras.splice(index,1);
+    				 console.log("Deletion successfull");
     				 HomeService.obtainUsersVideofeed($rootScope.globals.currentUser.token,function(response){
-    if(response.success)
-    {
-      var obj=response.data;
-      var array=[];
-      for(var i =0;i<obj.length;i++)
-        {
-          var cam = {'url':String(obj[i].address),'id':String(obj[i].cid)};
-          console.log(obj[i]);
-          $scope.Cameras.push(cam);
-        }
-    }
-    else
-    {
-      alert(response.success);
-    }
-  });		
+             if(response.success)
+              {
+                var obj=response.data;
+                var array=[];
+                   for(var i =0;i<obj.length;i++)
+                    {
+                       var cam = {'url':String(obj[i].address),'id':String(obj[i].cid)};
+                       console.log(obj[i]);
+                       $scope.Cameras.push(cam);
+                    }
+              }
+
+            else
+              {
+                 alert(response.success);
+              }
+           });		
     			}
     			else
     			{
